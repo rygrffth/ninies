@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Nisrina, with love from the moon and back 🌙</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("kA5Ef6QA0lbWQ4mol");
+       })();
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fae8f1 0%, #f9e3e3 100%);
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Soft background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,215,215,0.3) 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,235,215,0.2) 0%, transparent 70%);
+            bottom: -80px;
+            left: -80px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        #app-container {
+            width: 100%;
+            max-width: 420px;
+            min-height: 700px;
+            background: rgba(255, 250, 245, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            box-shadow: 
+                0 20px 40px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+                0 0 30px rgba(255, 200, 220, 0.3);
+            padding: 32px 20px 40px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        /* Decorative corner elements */
+        .corner-flower {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .corner-flower.top-left {
+            top: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23dba5a5"><path d="M20,20 Q40,5 60,20 Q75,35 60,50 Q40,65 20,50 Q5,35 20,20"/><circle cx="35" cy="35" r="8" fill="%23f5d5d5"/><circle cx="45" cy="45" r="6" fill="%23f5d5d5"/></svg>') no-repeat center/contain;
+            transform: rotate(-15deg);
+        }
+
+        .corner-flower.bottom-right {
+            bottom: 0;
+            right: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23dba5a5"><path d="M20,20 Q40,5 60,20 Q75,35 60,50 Q40,65 20,50 Q5,35 20,20"/><circle cx="35" cy="35" r="8" fill="%23f5d5d5"/><circle cx="45" cy="45" r="6" fill="%23f5d5d5"/></svg>') no-repeat center/contain;
+            transform: rotate(165deg);
+        }
+
+        /* All sections */
+        .section {
+            display: none;
+            opacity: 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 5;
+            width: 100%;
+        }
+
+        .section.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Romantic typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ac6c6c, #9b7b7b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #a78686;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: -8px;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #735e5e;
+            font-weight: 300;
+        }
+
+        /* Buttons — soft, romantic */
+        .btn {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(200, 150, 150, 0.3);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #6d4c4c;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(180, 130, 130, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn i {
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 240, 240, 0.8);
+            border-color: #dba5a5;
+            box-shadow: 0 8px 18px rgba(170, 120, 120, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #dbb8b8;
+            box-shadow: none;
+        }
+
+        /* Back to menu button group */
+        .nav-footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        /* Section 0 — Calendar */
+        .calendar-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 32px;
+            padding: 24px 16px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(190, 140, 140, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .calendar-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #b38080;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #ebd0d0;
+            padding-bottom: 12px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .day-name {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #b59797;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .day-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6d4c4c;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .day-cell:hover {
+            background: rgba(230, 180, 180, 0.3);
+            border-color: #eac1c1;
+            transform: scale(1.05);
+        }
+
+        .day-cell.correct {
+            background: #b8a38d;
+            color: white;
+            box-shadow: 0 0 0 3px rgba(200, 160, 160, 0.3);
+        }
+
+        .day-cell.wrong {
+            background: #f0cfcf;
+            color: #a25a5a;
+            animation: softShake 0.3s ease;
+        }
+
+        @keyframes softShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            75% { transform: translateX(4px); }
+        }
+
+        #calendar-feedback {
+            min-height: 24px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Section 1 — Gift box */
+        .gift-container {
+            width: 180px;
+            height: 180px;
+            margin: 30px auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gift-container:hover {
+            transform: scale(1.02);
+        }
+
+        .gift-box {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80%;
+            background: linear-gradient(145deg, #f3d5d5, #eac1c1);
+            border-radius: 20px 20px 12px 12px;
+            box-shadow: 0 8px 0 #be8f8f;
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: 0;
+            left: -5%;
+            width: 110%;
+            height: 25%;
+            background: linear-gradient(145deg, #ffe1e1, #f0caca);
+            border-radius: 30px 30px 8px 8px;
+            box-shadow: 0 6px 0 #be8f8f;
+            z-index: 2;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .gift-ribbon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 100%;
+            background: #f2b0b0;
+            border-radius: 20px;
+            z-index: 3;
+        }
+
+        .gift-ribbon::before,
+        .gift-ribbon::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background: #f2b0b0;
+            border-radius: 30px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .gift-ribbon::before { transform: translate(-110%, -50%) rotate(-20deg); }
+        .gift-ribbon::after { transform: translate(10%, -50%) rotate(20deg); }
+
+        .gift-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0) scale(0);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 32px;
+            box-shadow: 0 15px 30px rgba(140, 80, 80, 0.2);
+            width: 220px;
+            text-align: center;
+            z-index: 5;
+            transition: all 0.5s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid #f5dddd;
+            opacity: 0;
+        }
+
+        .gift-container.open .gift-lid {
+            transform: translateY(-60px) rotate(-5deg);
+            opacity: 0.8;
+        }
+
+        .gift-container.open .gift-card {
+            transform: translate(-50%, -110px) scale(1);
+            opacity: 1;
+        }
+
+        /* Section 2 — Make a wish (cake) */
+        .cake-graphic {
+            width: 200px;
+            height: 160px;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .cake-layer {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            border-radius: 30px 30px 8px 8px;
+            background: linear-gradient(145deg, #fad8d8, #eac1c1);
+            box-shadow: 0 6px 0 #be8f8f;
+        }
+
+        .layer-bottom {
+            height: 70px;
+            bottom: 0;
+        }
+
+        .layer-top {
+            height: 50px;
+            bottom: 60px;
+            width: 80%;
+            left: 10%;
+            background: linear-gradient(145deg, #ffe6e6, #fad2d2);
+        }
+
+        .candles {
+            position: absolute;
+            bottom: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: #fff2d7;
+            border-radius: 5px 5px 2px 2px;
+            position: relative;
+            box-shadow: 0 -4px 0 #edd4b3;
+        }
+
+        .flame {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 20px;
+            background: radial-gradient(circle at 50% 0%, #ffb347, #ff8c42);
+            border-radius: 60% 60% 20% 20%;
+            opacity: 0;
+            transition: opacity 0.3s;
+            filter: blur(1px);
+        }
+
+        .flame.lit {
+            opacity: 1;
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            from { transform: translateX(-50%) scale(1); opacity: 1; }
+            to { transform: translateX(-50%) scale(1.2); opacity: 0.9; }
+        }
+
+        .wish-section {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            padding: 20px;
+            border: 1px solid #ffe2e2;
+        }
+
+        #wishInput {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ebcbcb;
+            border-radius: 40px;
+            background: white;
+            font-family: 'Quicksand', sans-serif;
+            resize: none;
+            outline: none;
+            font-size: 0.95rem;
+            color: #4f3b3b;
+            transition: all 0.2s;
+        }
+
+        #wishInput:focus {
+            border-color: #dba5a5;
+            box-shadow: 0 0 0 3px rgba(210, 150, 150, 0.2);
+        }
+
+        #sendWishBtn {
+            width: 100%;
+            margin-top: 12px;
+            padding: 12px;
+            border: none;
+            border-radius: 40px;
+            background: linear-gradient(145deg, #e3b9b9, #dba5a5);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(180, 120, 120, 0.3);
+        }
+
+        #sendWishBtn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(180, 120, 120, 0.4);
+        }
+
+        #sendWishBtn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #cfa5a5;
+        }
+
+        .blow-btn {
+            display: none;
+            background: linear-gradient(145deg, #fad2d2, #f0b9b9);
+            border: none;
+            color: #5f4242;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            box-shadow: 0 6px 0 #b48484;
+            transition: all 0.1s ease;
+            cursor: pointer;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .blow-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #b48484;
+        }
+
+        /* Section 3 — Love letter (typewriter) */
+        .scroll-container {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            padding: 30px 24px;
+            width: 100%;
+            max-width: 340px;
+            box-shadow: 0 15px 30px rgba(150, 100, 100, 0.1);
+            border: 1px solid rgba(255, 240, 240, 0.8);
+            margin: 15px 0;
+        }
+
+        #typewriter-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #4b3a3a;
+            font-weight: 300;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: left;
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #dba5a5;
+            font-weight: 300;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Section 4 — Niniesyup (film strip) */
+       .film-strip {
+        width: 100%;
+        background: #1a1a1a; /* Warna film hitam pekat */
+        border-radius: 30px;
+        padding: 10px 5px;
+        margin: 20px 0;
+        position: relative;
+        box-shadow: 
+            0 15px 25px rgba(0, 0, 0, 0.5),
+            inset 0 0 0 3px #3a3a3a,
+            inset 0 0 0 6px #222222;
+        border: 1px solid #6b4f4f;
+        overflow: hidden;
+    }
+    /* Efek lubang film di sisi atas dan bawah */
+    .film-strip::before,
+    .film-strip::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: repeating-linear-gradient(
+            90deg,
+            #3a2a2a,
+            #3a2a2a 10px,
+            #1a1a1a 10px,
+            #1a1a1a 25px,
+            #3a2a2a 25px,
+            #3a2a2a 35px,
+            #1a1a1a 35px,
+            #1a1a1a 50px
+        );
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0.9;
+    }
+
+    .film-strip::before {
+        top: 0;
+        border-bottom: 2px solid #4a3a3a;
+    }
+
+    .film-strip::after {
+        bottom: 0;
+        border-top: 2px solid #4a3a3a;
+    }
+
+    /* Celah antar baris - EFEK ROLL FILM ASLI */
+    .film-row {
+        position: relative;
+        margin-bottom: 25px; /* Celah antar baris */
+    }
+
+    .film-row:last-child {
+        margin-bottom: 5px;
+    }
+
+    /* Lubang-lubang film di ANTAR BARIS */
+    .film-row::before {
+        content: '';
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        width: 100%;
+        height: 16px;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 15px,
+            #3a2a2a 15px,
+            #3a2a2a 25px,
+            #1a1a1a 25px,
+            #1a1a1a 40px,
+            #3a2a2a 40px,
+            #3a2a2a 50px,
+            transparent 50px,
+            transparent 65px
+        );
+        z-index: 2;
+        pointer-events: none;
+        border-top: 2px solid #4a3a3a;
+        border-bottom: 2px solid #4a3a3a;
+        opacity: 0.8;
+    }
+
+    /* Baris terakhir tidak perlu lubang di bawah */
+    .film-row:last-child::before {
+        display: none;
+    }
+
+    /* Container untuk setiap baris film */
+    .film-row-content {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+        padding: 8px 0;
+        will-change: transform;
+        background: rgba(0, 0, 0, 0.2); /* Sedikit transparan */
+        border-radius: 4px;
+    }
+
+    /* Baris ganjil (1,3) - bergerak ke kiri */
+    .film-row.left-to-right .film-row-content {
+        animation: scrollLeftToRight 40s linear infinite;
+    }
+
+    /* Baris genap (2,4) - bergerak ke kanan */
+    .film-row.right-to-left .film-row-content {
+        animation: scrollRightToLeft 40s linear infinite;
+    }
+
+    /* Animasi dari kiri ke kanan */
+    @keyframes scrollLeftToRight {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    /* Animasi dari kanan ke kiri */
+    @keyframes scrollRightToLeft {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Berhenti scroll saat hover */
+    .film-row:hover .film-row-content {
+        animation-play-state: paused;
+    }
+
+    /* Item film dengan rasio 5:4 */
+    .film-item {
+        flex: 0 0 auto;
+        width: 130px; /* 5 bagian */
+        height: 104px; /* 4 bagian (130:104 = 5:4) */
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 
+            0 5px 12px rgba(0, 0, 0, 0.6),
+            inset 0 0 0 2px #8b7a7a,
+            inset 0 0 0 4px #f5e6e6;
+        background: #2a2a2a;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        border: 2px solid #f0f0f0;
+        position: relative;
+    }
+
+    /* Foto di dalam item */
+    .film-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) sepia(40%) brightness(0.55) contrast(1.1);
+        transition: all 0.5s ease;
+        display: block;
+    }
+
+    /* Efek hover - foto muncul warnanya */
+    .film-item:hover img {
+        filter: grayscale(0%) sepia(0%) brightness(1) contrast(1.2);
+        transform: scale(1.15);
+    }
+
+    /* Efek hover - item membesar */
+    .film-item:hover {
+        transform: translateY(-10px) scale(1.08);
+        box-shadow: 
+            0 20px 30px rgba(0, 0, 0, 0.7),
+            inset 0 0 0 2px #f0b0b0,
+            inset 0 0 0 4px #ffffff;
+        z-index: 20;
+    }
+
+    /* Efek kilatan film saat hover */
+    .film-item::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 220, 220, 0.4) 0%, transparent 80%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+
+    .film-item:hover::after {
+        opacity: 1;
+    }
+
+    /* Efek garis tepi film (seperti seluloid) */
+    .film-item::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 1px dashed rgba(255, 215, 215, 0.3);
+        border-radius: 8px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Gradient fade di kiri dan kanan */
+    .film-strip .fade-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(to right, #1a1a1a 0%, transparent 100%);
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .film-strip .fade-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(to left, #1a1a1a 0%, transparent 100%);
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    /* Efek tekstur film (grain) */
+    .film-strip .film-grain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.08"/></svg>');
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 1;
+        mix-blend-mode: overlay;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .film-item {
+            width: 100px;
+            height: 80px;
+        }
+        
+        .film-row::before {
+            bottom: -16px;
+            height: 14px;
+        }
+    }
+
+        /* Section 5 — Our song */
+        .vinyl-wrapper {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .vinyl {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #5a5a5a, #2d2d2d);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 0 8px #fae8e8 inset;
+            animation: spin 8s linear infinite;
+            position: relative;
+        }
+
+        .vinyl::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: #fae8e8;
+            border-radius: 50%;
+            border: 2px solid #c99b9b;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .music-player {
+            width: 100%;
+            max-width: 300px;
+            margin: 15px 0;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(130, 80, 80, 0.1);
+            border: 2px solid white;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Section 6 — Birthday treats */
+        .treats-container {
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 15px 0;
+        }
+
+        .ticket {
+            background: white;
+            border-radius: 60px 20px 20px 60px;
+            position: relative;
+            height: 90px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 14px rgba(140, 90, 90, 0.1);
+            border: 1px solid #f3d9d9;
+            overflow: hidden;
+        }
+
+        .ticket-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ebc8c8, #dcacac);
+            border-radius: 60px 20px 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: white;
+            letter-spacing: 1px;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        .ticket-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #775e5e;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+        }
+
+        .ticket.revealed .ticket-cover {
+            transform: translateX(100%);
+        }
+
+        .wa-link {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 20px;
+            box-shadow: 0 6px 0 #128C7E;
+            transition: all 0.1s;
+        }
+
+        .wa-link:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #128C7E;
+        }
+
+        /* Section 7 — Photobooth */
+        .photobooth-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 20px;
+            width: 100%;
+            max-width: 340px;
+            margin: 15px 0;
+            border: 1px solid #ffeaea;
+        }
+
+        #camera-stream {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 24px;
+            background: #f0d9d9;
+            transform: scaleX(-1);
+            border: 3px solid white;
+        }
+
+        .preview-strip {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .preview-box {
+            width: 16%;
+            aspect-ratio: 4/5;
+            background: #fae1e1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #b78484;
+            border: 1px dashed #dcb5b5;
+            overflow: hidden;
+        }
+
+        .preview-box.filled {
+            border: 2px solid #b78383;
+        }
+
+        .preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .snap-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #f8e2e2;
+            border: 4px solid white;
+            box-shadow: 0 6px 0 #cf9f9f, 0 10px 20px rgba(150, 80, 80, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #8a5c5c;
+            cursor: pointer;
+            transition: all 0.1s;
+            margin: 15px auto;
+        }
+
+        .snap-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 4px 0 #cf9f9f, 0 10px 20px rgba(150, 80, 80, 0.2);
+        }
+
+        #photo-result {
+            width: 100%;
+            border-radius: 32px;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(100, 50, 50, 0.2);
+        }
+
+        /* Replay button */
+        .replay-btn {
+            margin-top: 20px;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            color: #7a5c5c;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #dbb5b5;
+            transition: all 0.1s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid white;
+        }
+
+        .replay-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #dbb5b5;
+        }
+
+        .replay-btn i {
+            transition: transform 0.4s;
+        }
+
+        .replay-btn:hover i {
+            transform: rotate(180deg);
+        }
+
+        /* Mascot */
+        .mascot-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 85px;
+            z-index: 100;
+            cursor: pointer;
+            filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1));
+            transition: transform 0.2s;
+        }
+
+        .mascot-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .mascot-img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(180, 110, 110, 0.2);
+            border: 3px solid white;
+        }
+
+        .speech-bubble {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 12px 16px;
+            border-radius: 30px 30px 30px 5px;
+            font-size: 0.85rem;
+            color: #6a4c4c;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(130, 70, 70, 0.1);
+            border: 1px solid #f3c9c9;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .mascot-container.talking .speech-bubble {
+            opacity: 1;
+        }
+
+        /* Celebration effects */
+        #flash-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .flash-animation {
+            animation: cameraFlash 0.2s ease-out;
+        }
+
+        @keyframes cameraFlash {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .sparkle {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            animation: sparkleFade 1s forwards;
+        }
+
+        @keyframes sparkleFade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+
+
+         /* Overlay untuk mencegah navigasi */
+    .section-blocked {
+        position: relative;
+    }
+    
+    .section-blocked::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 200, 200, 0.1);
+        backdrop-filter: blur(2px);
+        z-index: 5;
+        pointer-events: none;
+    }
+    
+    .nav-blocked {
+        position: relative;
+        pointer-events: none !important;
+        opacity: 0.5;
+    }
+    
+    .nav-blocked::before {
+        content: '🔒 Selesaikan dulu ya';
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ff9e9e;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        z-index: 10;
+        pointer-events: none;
+        animation: bounce 1s infinite;
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* Cake section */
+    .cake-section {
+        position: relative;
+    }
+    
+    /* Validasi karakter */
+    .char-counter {
+        font-size: 0.8rem;
+        margin-top: 5px;
+        text-align: right;
+        color: #b88080;
+    }
+    
+    .char-counter.valid {
+        color: #6b8e6b;
+    }
+    
+    .char-counter.invalid {
+        color: #e07c7c;
+    }
+    
+    /* Tombol terkunci */
+    .btn-locked {
+        position: relative;
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    .btn-locked::after {
+        content: '🔒';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 1rem;
+    }
+    
+    /* Peringatan */
+    .warning-message {
+        background: #ffe5e5;
+        color: #b85c5c;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        margin: 10px 0;
+        border: 1px solid #ffb6b6;
+        animation: fadeInOut 2s infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+    }
+    </style>
+</head>
+<body>
+    <!-- Decorative elements -->
+    <div class="corner-flower top-left"></div>
+    <div class="corner-flower bottom-right"></div>
+
+    <!-- Mascot -->
+    <div class="mascot-container" onclick="mascotTalk()">
+        <div class="speech-bubble" id="mascot-text">Hello lovely! 💕</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3187/3187015.png" alt="Mascot Bunny" class="mascot-img">
+    </div>
+
+    <div id="flash-effect"></div>
+
+    <!-- Main app container -->
+    <div id="app-container">
+        <!-- Section 0: Save the Date -->
+        <div id="section-0" class="section active">
+            <h1>Save the Date</h1>
+            <div class="subhead">For someone special</div>
+            <p style="margin-top: 8px;">When does the magic begin?</p>
+            
+            <div class="calendar-card">
+                <div class="calendar-header">February 2026</div>
+                <div class="calendar-grid">
+                    <div class="day-name">Su</div><div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div>
+                    <!-- Days 1-28 simplified for space -->
+                    <div class="day-cell" onclick="checkDate(this, 1)">1</div><div class="day-cell" onclick="checkDate(this, 2)">2</div><div class="day-cell" onclick="checkDate(this, 3)">3</div><div class="day-cell" onclick="checkDate(this, 4)">4</div><div class="day-cell" onclick="checkDate(this, 5)">5</div><div class="day-cell" onclick="checkDate(this, 6)">6</div><div class="day-cell" onclick="checkDate(this, 7)">7</div>
+                    <div class="day-cell" onclick="checkDate(this, 8)">8</div><div class="day-cell" onclick="checkDate(this, 9)">9</div><div class="day-cell" onclick="checkDate(this, 10)">10</div><div class="day-cell" onclick="checkDate(this, 11)">11</div><div class="day-cell" onclick="checkDate(this, 12)">12</div><div class="day-cell" onclick="checkDate(this, 13)">13</div><div class="day-cell" onclick="checkDate(this, 14)">14</div>
+                    <div class="day-cell" onclick="checkDate(this, 15)">15</div><div class="day-cell" onclick="checkDate(this, 16)">16</div><div class="day-cell" onclick="checkDate(this, 17)">17</div><div class="day-cell" onclick="checkDate(this, 18)">18</div><div class="day-cell" onclick="checkDate(this, 19)">19</div><div class="day-cell" onclick="checkDate(this, 20)">20</div><div class="day-cell" onclick="checkDate(this, 21)">21</div>
+                    <div class="day-cell" onclick="checkDate(this, 22)">22</div><div class="day-cell" onclick="checkDate(this, 23)">23</div><div class="day-cell" onclick="checkDate(this, 24)">24</div><div class="day-cell" onclick="checkDate(this, 25)">25</div><div class="day-cell" onclick="checkDate(this, 26)">26</div><div class="day-cell" onclick="checkDate(this, 27)">27</div><div class="day-cell" onclick="checkDate(this, 28)">28</div>
+                </div>
+            </div>
+            <p id="calendar-feedback" style="color: #b88080;"></p>
+        </div>
+
+        <!-- Section 1: Special Delivery (Gift) -->
+        <div id="section-1" class="section">
+            <h1>For Nisrina</h1>
+            <div class="subhead">A little something</div>
+            
+            <div class="gift-container" onclick="openGift()">
+                <div class="gift-lid"></div>
+                <div class="gift-box"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-card">
+                    <p style="font-family: 'Playfair Display'; font-size: 1.6rem; color: #b88080;">🎂</p>
+                    <p style="font-size: 1.2rem; margin: 5px 0;">Happy Birthday<br>Nisrina!</p>
+                    <p style="font-size: 0.8rem;">from the moon and back 🌙</p>
+                </div>
+            </div>
+            
+            <p style="font-style: italic; color: #a07a7a;">tap the gift to open</p>
+            
+            <div class="nav-footer">
+                <button id="start-btn" class="btn hidden" onclick="goToSection('menu')">
+                    Open Menu <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Menu -->
+        <div id="section-menu" class="section">
+            <h1>Sweet Menu</h1>
+            <div class="subhead">pick your adventure</div>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; width: 100%; max-width: 350px; margin: 20px 0;">
+                <!-- 2 columns menu, each item as a button-like card -->
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(2)">
+                    <i class="fas fa-cake-candles" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Make a Wish</span>
+                </div>
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(3)">
+                    <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Read Letter</span>
+                </div>
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(4)">
+                    <i class="fas fa-film" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Niniesyup</span>
+                </div>
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(5)">
+                    <i class="fas fa-headphones" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Our Song</span>
+                </div>
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(7)">
+                    <i class="fas fa-camera-retro" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Photobooth</span>
+                </div>
+                <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(6)">
+                    <i class="fas fa-gift" style="font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Claim Gift</span>
+                </div>
+            </div>
+
+            <button id="replayBtn" class="replay-btn" onclick="fullResetApp()">
+                <i class="fas fa-undo-alt"></i> Play Again
+            </button>
+        </div>
+
+        <!-- Section 2: Make a Wish -->
+        <div id="section-2" class="section">
+    <h1>Make a Wish</h1>
+    <div class="subhead">tiup lilin dan berharap</div>
+    
+    <div class="cake-graphic">
+        <div class="cake-layer layer-bottom"></div>
+        <div class="cake-layer layer-top"></div>
+        <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+    </div>
+    
+    <p id="cake-text" style="margin: 10px 0;">Lilin masih padam...</p>
+
+    <!-- Tombol nyalakan lilin -->
+    <button id="lightBtn" class="btn" onclick="lightCandles()" style="margin: 10px 0;">
+        <i class="fas fa-fire"></i> Nyalakan Lilin
+    </button>
+
+    <!-- Area menulis wish (awalnya hidden) -->
+    <div id="wish-section" class="wish-section" style="display: none; width: 100%; max-width: 300px;">
+        <textarea id="wishInput" placeholder="Tulis harapanmu di sini... (minimal 10 karakter)" rows="4" style="width: 100%;"></textarea>
+        
+        <!-- Counter karakter -->
+        <div class="char-counter" id="charCounter">
+            0/10 karakter
+        </div>
+        
+        <!-- Tombol kirim -->
+        <button id="sendWishBtn" disabled class="btn-locked" style="width: 100%; margin-top: 10px;">
+            Kirim Harapan ✨
+        </button>
+        
+        <!-- Pesan peringatan (hidden awalnya) -->
+        <div id="wishWarning" class="warning-message" style="display: none; margin-top: 10px;">
+            <i class="fas fa-exclamation-circle"></i> Harapan minimal 10 karakter ya
+        </div>
+    </div>
+
+    <!-- Tombol tiup lilin (awalnya hidden) -->
+    <button id="blowBtn" class="blow-btn" onclick="blowCandles()" style="display: none;">
+        <i class="fas fa-wind"></i> Tiup Lilin & Selesai
+    </button>
+    
+    <!-- Pesan sukses -->
+    <div id="successMessage" style="display: none; background: #e8f0e8; color: #5b8c5b; padding: 10px; border-radius: 30px; margin: 10px 0;">
+        <i class="fas fa-check-circle"></i> Harapan terkirim! Sekarang bisa kembali ke menu ✨
+    </div>
+    
+    <!-- Navigation footer dengan kondisi terkunci -->
+    <div class="nav-footer" id="wishNavFooter">
+        <button class="btn btn-outline" onclick="tryGoToMenu()" id="backToMenuBtn">
+            <i class="fas fa-chevron-left"></i> Kembali ke Menu
+        </button>
+    </div>
+</div>
+
+        <!-- Section 3: Dear Nisrina (Love Letter) -->
+        <div id="section-3" class="section">
+            <h1>Dear Nisrina</h1>
+            <div class="subhead">a letter from the heart</div>
+            
+            <div class="scroll-container">
+                <p id="typewriter-text" class="typing-cursor"></p>
+            </div>
+            
+            <div class="nav-footer">
+                <button class="btn btn-outline" onclick="goToSection('menu')">
+                    <i class="fas fa-chevron-left"></i> Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 4: Niniesyup (Film Strip) -->
+        <div id="section-4" class="section">
+            <h1>Niniesyup</h1>
+            <div class="subhead">our moments</div>
+            
+           <!-- HTML untuk film strip 4 baris dengan foto acak antar baris -->
+<div class="film-strip">
+    <!-- Efek fade di tepi -->
+    <div class="fade-left"></div>
+    <div class="fade-right"></div>
+    
+    <!-- Efek grain film -->
+    <div class="film-grain"></div>
+    
+    <div class="film-rows-container" style="padding: 5px 0;">
+        <!-- BARIS 1: KIRI KE KANAN (foto diacak total) -->
+        <div class="film-row left-to-right">
+            <div class="film-row-content">
+                <!-- Set pertama - acak bebas -->
+                <div class="film-item">
+                    <img src="foto11.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto3.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto8.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto14.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto1.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto6.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto9.jpg" alt="Memory">
+                </div>
+                <!-- Duplikat untuk looping - acak juga -->
+                <div class="film-item">
+                    <img src="foto4.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto12.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto2.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto10.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto5.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto13.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto7.jpg" alt="Memory">
+                </div>
+            </div>
+        </div>
+
+        <!-- BARIS 2: KANAN KE KIRI (foto diacak total, berbeda dengan baris 1) -->
+        <div class="film-row right-to-left">
+            <div class="film-row-content">
+                <!-- Set pertama - acak bebas, komposisi berbeda -->
+                <div class="film-item">
+                    <img src="foto5.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto9.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto2.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto13.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto7.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto11.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto4.jpg" alt="Memory">
+                </div>
+                <!-- Duplikat untuk looping - acak juga -->
+                <div class="film-item">
+                    <img src="foto14.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto1.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto8.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto3.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto12.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto6.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto10.jpg" alt="Memory">
+                </div>
+            </div>
+        </div>
+
+        <!-- BARIS 3: KIRI KE KANAN (foto diacak total, berbeda dengan baris 1 & 2) -->
+        <div class="film-row left-to-right">
+            <div class="film-row-content">
+                <!-- Set pertama - acak bebas, komposisi berbeda -->
+                <div class="film-item">
+                    <img src="foto12.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto6.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto10.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto3.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto8.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto14.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto1.jpg" alt="Memory">
+                </div>
+                <!-- Duplikat untuk looping - acak juga -->
+                <div class="film-item">
+                    <img src="foto9.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto4.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto13.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto2.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto11.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto5.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto7.jpg" alt="Memory">
+                </div>
+            </div>
+        </div>
+
+        <!-- BARIS 4: KANAN KE KIRI (foto diacak total, berbeda semua) -->
+        <div class="film-row right-to-left">
+            <div class="film-row-content">
+                <!-- Set pertama - acak bebas, komposisi berbeda -->
+                <div class="film-item">
+                    <img src="foto4.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto11.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto7.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto2.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto13.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto9.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto5.jpg" alt="Memory">
+                </div>
+                <!-- Duplikat untuk looping - acak juga -->
+                <div class="film-item">
+                    <img src="foto1.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto8.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto14.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto3.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto12.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto6.jpg" alt="Memory">
+                </div>
+                <div class="film-item">
+                    <img src="foto10.jpg" alt="Memory">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            
+            <div class="nav-footer">
+                <button class="btn btn-outline" onclick="goToSection('menu')">
+                    <i class="fas fa-chevron-left"></i> Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 5: Our Song -->
+        <div id="section-5" class="section">
+            <h1>Our Song</h1>
+            <div class="subhead">play it, feel it</div>
+            
+            <div class="vinyl-wrapper">
+                <div class="vinyl"></div>
+            </div>
+            
+            <div class="music-player">
+                <video controls>
+                    <source src="rcany.mp4" type="video/mp4">
+                    Your browser doesn't support video.
+                </video>
+            </div>
+            <p style="font-style: italic;">Reality Club — Anything You Want</p>
+            
+            <div class="nav-footer">
+                <button class="btn btn-outline" onclick="goToSection('menu')">
+                    <i class="fas fa-chevron-left"></i> Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 6: Birthday Treats -->
+        <div id="section-6" class="section">
+            <h1>Birthday Treats</h1>
+            <div class="subhead">choose your surprise</div>
+            
+            <div class="treats-container">
+                <div class="ticket" onclick="toggleTicket(this)">
+                    <div class="ticket-cover">Treat #1</div>
+                    <div class="ticket-content">🍽️ Dinner date</div>
+                </div>
+                <div class="ticket" onclick="toggleTicket(this)">
+                    <div class="ticket-cover">Treat #2</div>
+                    <div class="ticket-content">📸 Photobox session</div>
+                </div>
+                <div class="ticket" onclick="toggleTicket(this)">
+                    <div class="ticket-cover">Treat #3</div>
+                    <div class="ticket-content">✨ Secret surprise</div>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/6281229280741?text=I%20want%20to%20claim%20my%20birthday%20treat%20💖" class="wa-link" target="_blank">
+                <i class="fab fa-whatsapp"></i> Claim via WA
+            </a>
+            
+            <div class="nav-footer">
+                <button class="btn btn-outline" onclick="goToSection('menu')">
+                    <i class="fas fa-chevron-left"></i> Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Section 7: Photobooth -->
+        <div id="section-7" class="section">
+            <h1>Photobooth</h1>
+            <div class="subhead">capture the smiles</div>
+            
+            <div id="camera-ui">
+                <div class="photobooth-card">
+                    <video id="camera-stream" autoplay playsinline class="hidden"></video>
+                    
+                    <div id="grid-preview-container" class="preview-strip hidden">
+                        <div class="preview-box" id="preview-1">1</div>
+                        <div class="preview-box" id="preview-2">2</div>
+                        <div class="preview-box" id="preview-3">3</div>
+                        <div class="preview-box" id="preview-4">4</div>
+                        <div class="preview-box" id="preview-5">5</div>
+                        <div class="preview-box" id="preview-6">6</div>
+                    </div>
+                </div>
+
+                <button id="start-camera-btn" class="btn" onclick="startPhotoboothSession()">
+                    <i class="fas fa-camera"></i> Start Camera
+                </button>
+                
+                <div id="snap-btn" class="snap-btn hidden" onclick="takePhoto()">
+                    <i class="fas fa-camera"></i>
+                </div>
+                
+                <p id="photo-instruction" class="hidden" style="color: #a77474;">0/6 photos</p>
+            </div>
+
+            <div id="result-ui" class="hidden" style="width: 100%; text-align: center;">
+                <div class="photobooth-card">
+                    <img id="photo-result" alt="Your photo strip">
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; margin: 20px 0;">
+                    <a id="download-link" class="btn" download="photostrip.png">
+                        <i class="fas fa-download"></i> Save
+                    </a>
+                    <button class="btn btn-outline" onclick="resetCamera()">
+                        <i class="fas fa-redo"></i> Retake
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav-footer">
+                <button class="btn btn-outline" onclick="stopCameraAndBack()">
+                    <i class="fas fa-chevron-left"></i> Menu
+                </button>
+            </div>
+        </div>
+
+        <canvas id="photo-canvas" class="hidden"></canvas>
+    </div>
+
+    <script>
+        // EmailJS init
+        (function(){ emailjs.init("kA5Ef6QA0lbWQ4mol"); })();
+
+        // --- Data ---
+        const suratCinta = `My Dearest Nisrina,<br><br>Happy Birthday.<br><br>You are the sun that brightens my mornings, the rain that brings peace to my nights, and the autumn leaves that color my world. You are the seasons of my life.<br><br>My prayer for you is simple: may every step be guided by grace, may your heart always be full of joy, and may all your dreams come true.<br><br>I promise to always be your safe space, your biggest supporter, and your best friend.<br><br>Yours forever,<br>Naufal Rayhan Ali Rahman`;
+
+        let typingTimeout;
+        let videoStream = null;
+        let photoCount = 0;
+        let photosTaken = [];
+
+        // --- Navigation ---
+       // ==================== STATUS GLOBAL SECTION ====================
+    // Menyimpan status setiap section
+    const sectionStatus = {
+        0: { completed: false }, // Calendar
+        1: { completed: false }, // Gift
+        2: { completed: false, wishSent: false, candlesLit: false }, // Make a Wish
+        3: { completed: false }, // Letter
+        4: { completed: false }, // Film
+        5: { completed: false }, // Song
+        6: { completed: false }, // Treats
+        7: { completed: false }  // Photobooth
+    };
+    
+    // ==================== FUNGSI NAVIGASI DENGAN CEK ====================
+    function goToSection(sectionNum) {
+        const currentSection = document.querySelector('.section.active');
+        const currentSectionId = currentSection ? currentSection.id : null;
+        
+        // Cek apakah section 2 (Make a Wish) sedang aktif dan belum selesai
+        if (currentSectionId === 'section-2') {
+            if (!sectionStatus[2].wishSent) {
+                // Tampilkan pesan bahwa harus selesai dulu
+                showTemporaryMessage('Selesaikan Make a Wish dulu ya! 🎂');
+                return;
+            }
+        }
+        
+        // Cek section lain jika perlu (bisa ditambahkan nanti)
+        
+        // Reset section yang akan ditinggalkan
+        if (currentSectionId === 'section-2') {
+            resetSection2();
+        } else if (currentSectionId === 'section-0') {
+            resetSection0();
+        } else if (currentSectionId === 'section-1') {
+            resetSection1();
+        } else if (currentSectionId === 'section-3') {
+            resetSection3();
+        } else if (currentSectionId === 'section-4') {
+            resetSection4();
+        } else if (currentSectionId === 'section-5') {
+            resetSection5();
+        } else if (currentSectionId === 'section-6') {
+            resetSection6();
+        } else if (currentSectionId === 'section-7') {
+            resetSection7();
+        }
+        
+        // Pindah ke section baru
+        document.querySelectorAll('.section').forEach(sec => {
+            sec.classList.remove('active');
+        });
+
+        let targetId = (sectionNum === 'menu') ? 'section-menu' : `section-${sectionNum}`;
+        const target = document.getElementById(targetId);
+        if (target) {
+            target.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Trigger khusus untuk section tertentu
+        if (sectionNum === 3) startTyping();
+    }
+    
+    // Fungsi untuk mencoba kembali ke menu (dengan cek)
+    function tryGoToMenu() {
+        const currentSection = document.querySelector('.section.active');
+        
+        if (currentSection.id === 'section-2') {
+            if (!sectionStatus[2].wishSent) {
+                // Tampilkan warning
+                document.getElementById('wishWarning').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('wishWarning').style.display = 'none';
+                }, 3000);
+                return;
+            }
+        }
+        
+        // Jika aman, lanjut ke menu
+        goToSection('menu');
+    }
+    
+    // ==================== FUNGSI UNTUK MAKE A WISH ====================
+    function lightCandles() {
+        if (sectionStatus[2].candlesLit) return;
+        
+        document.querySelectorAll(".flame").forEach(f => f.classList.add("lit"));
+        document.getElementById("cake-text").innerText = "Sekarang tulis harapanmu ✨";
+        document.getElementById("lightBtn").style.display = "none";
+        
+        const wishSection = document.getElementById("wish-section");
+        wishSection.style.display = "block";
+        
+        sectionStatus[2].candlesLit = true;
+    }
+
+    // Setup wish input
+    const wishInput = document.getElementById("wishInput");
+    const sendWishBtn = document.getElementById("sendWishBtn");
+    const charCounter = document.getElementById("charCounter");
+    
+    wishInput.addEventListener("input", function() {
+        const length = this.value.length;
+        charCounter.innerText = `${length}/10 karakter`;
+        
+        if (length >= 10) {
+            charCounter.classList.add('valid');
+            charCounter.classList.remove('invalid');
+            sendWishBtn.disabled = false;
+            sendWishBtn.classList.remove('btn-locked');
+        } else {
+            charCounter.classList.add('invalid');
+            charCounter.classList.remove('valid');
+            sendWishBtn.disabled = true;
+            sendWishBtn.classList.add('btn-locked');
+        }
+    });
+
+    sendWishBtn.addEventListener("click", function() {
+        const wishText = wishInput.value.trim();
+        if (wishText.length < 10) {
+            alert('Harapan minimal 10 karakter ya!');
+            return;
+        }
+
+        sendWishBtn.innerText = "Mengirim...";
+        sendWishBtn.disabled = true;
+
+        // Kirim via EmailJS
+        emailjs.send('service_jyffvjo', 'template_aq75hcp', {
+            message: wishText,
+            to_name: "Rayhan",
+            from_name: "Nisrina"
+        })
+        .then(() => {
+            // Update status
+            sectionStatus[2].wishSent = true;
+            
+            document.getElementById("cake-text").innerText = "Harapan terkirim! ✨";
+            document.getElementById("wish-section").style.display = "none";
+            document.getElementById("blowBtn").style.display = "flex";
+            document.getElementById("successMessage").style.display = "block";
+            
+            // Hapus efek terkunci di tombol menu
+            document.getElementById("backToMenuBtn").classList.remove('nav-blocked');
+            
+            createSparkles();
+        })
+        .catch(() => {
+            alert("Gagal mengirim, coba lagi ya!");
+            sendWishBtn.innerText = "Kirim Harapan ✨";
+            sendWishBtn.disabled = false;
+        });
+    });
+
+    function blowCandles() {
+        document.querySelectorAll(".flame").forEach(f => f.classList.remove("lit"));
+        document.getElementById("cake-text").innerText = "Selamat! Harapanmu melayang ke langit 🌟";
+        document.getElementById("blowBtn").style.display = "none";
+        
+        // Tandai section 2 sebagai completed
+        sectionStatus[2].completed = true;
+        
+        // Tampilkan pesan bisa lanjut
+        setTimeout(() => {
+            if (confirm('Harapan sudah terkirim! Lanjut ke menu?')) {
+                goToSection('menu');
+            }
+        }, 2000);
+    }
+
+    // ==================== FUNGSI RESET SETIAP SECTION ====================
+    function resetSection0() {
+        // Reset calendar
+        document.querySelectorAll('.day-cell').forEach(cell => {
+            cell.classList.remove('correct', 'wrong');
+        });
+        document.getElementById('calendar-feedback').innerText = '';
+        sectionStatus[0].completed = false;
+    }
+    
+    function resetSection1() {
+        // Reset gift box
+        const gift = document.querySelector('.gift-container');
+        if (gift) gift.classList.remove('open');
+        document.getElementById('start-btn').classList.add('hidden');
+        sectionStatus[1].completed = false;
+    }
+    
+    function resetSection2() {
+        // Reset cake & wish
+        document.querySelectorAll('.flame').forEach(f => f.classList.remove('lit'));
+        document.getElementById('cake-text').innerText = "Lilin masih padam...";
+        document.getElementById('lightBtn').style.display = 'block';
+        document.getElementById('wish-section').style.display = 'none';
+        document.getElementById('blowBtn').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'none';
+        document.getElementById('wishWarning').style.display = 'none';
+        
+        // Reset input
+        wishInput.value = '';
+        charCounter.innerText = '0/10 karakter';
+        sendWishBtn.disabled = true;
+        sendWishBtn.classList.add('btn-locked');
+        sendWishBtn.innerText = 'Kirim Harapan ✨';
+        
+        // Reset status
+        sectionStatus[2] = { completed: false, wishSent: false, candlesLit: false };
+        
+        // Pastikan tombol menu tidak terkunci (karena reset)
+        document.getElementById("backToMenuBtn").classList.remove('nav-blocked');
+    }
+    
+    function resetSection3() {
+        // Reset letter
+        const letter = document.getElementById('loveLetter');
+        if (letter) letter.classList.remove('open');
+        document.getElementById('typewriter-text').innerHTML = '';
+        letterOpen = false;
+        sectionStatus[3].completed = false;
+    }
+    
+    function resetSection4() {
+        // Reset film (no state needed)
+        sectionStatus[4].completed = false;
+    }
+    
+    function resetSection5() {
+        // Reset music player (pause video)
+        const video = document.querySelector('#section-5 video');
+        if (video) video.pause();
+        sectionStatus[5].completed = false;
+    }
+    
+    function resetSection6() {
+        // Reset tickets
+        document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
+        sectionStatus[6].completed = false;
+    }
+    
+    function resetSection7() {
+        // Reset photobooth
+        stopCamera();
+        document.getElementById('result-ui')?.classList.add('hidden');
+        document.getElementById('snap-btn')?.classList.add('hidden');
+        document.getElementById('photo-instruction')?.classList.add('hidden');
+        document.getElementById('start-camera-btn')?.classList.remove('hidden');
+        document.getElementById('camera-ui')?.classList.remove('hidden');
+        document.getElementById('grid-preview-container')?.classList.add('hidden');
+        document.getElementById('camera-stream')?.classList.add('hidden');
+        sectionStatus[7].completed = false;
+    }
+    
+    // ==================== FUNGSI FULL RESET (PLAY AGAIN) ====================
+    function fullResetApp() {
+        // Reset semua section
+        resetSection0();
+        resetSection1();
+        resetSection2();
+        resetSection3();
+        resetSection4();
+        resetSection5();
+        resetSection6();
+        resetSection7();
+        
+        // Reset status global
+        for (let i = 0; i <= 7; i++) {
+            sectionStatus[i] = { completed: false };
+        }
+        sectionStatus[2] = { completed: false, wishSent: false, candlesLit: false };
+        
+        // Kembali ke section 0
+        goToSection(0);
+    }
+    
+    // ==================== FUNGSI TAMBAHAN ====================
+    function showTemporaryMessage(msg) {
+        const oldMsg = document.getElementById('tempMessage');
+        if (oldMsg) oldMsg.remove();
+        
+        const message = document.createElement('div');
+        message.id = 'tempMessage';
+        message.style.position = 'fixed';
+        message.style.top = '50%';
+        message.style.left = '50%';
+        message.style.transform = 'translate(-50%, -50%)';
+        message.style.background = '#ff9e9e';
+        message.style.color = 'white';
+        message.style.padding = '15px 25px';
+        message.style.borderRadius = '50px';
+        message.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+        message.style.zIndex = '10000';
+        message.style.fontWeight = 'bold';
+        message.style.animation = 'fadeInOut 2s';
+        message.innerText = msg;
+        
+        document.body.appendChild(message);
+        
+        setTimeout(() => {
+            message.remove();
+        }, 2000);
+    }
+    
+    // Override fungsi goToSection yang lama
+    window.goToSection = goToSection;
+    window.tryGoToMenu = tryGoToMenu;
+    window.fullResetApp = fullResetApp;
+    
+    // Tambahkan style untuk animasi
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translate(-50%, -30%); }
+            20% { opacity: 1; transform: translate(-50%, -50%); }
+            80% { opacity: 1; transform: translate(-50%, -50%); }
+            100% { opacity: 0; transform: translate(-50%, -70%); }
+        }
+    `;
+    document.head.appendChild(style);
+        // --- Calendar ---
+        function checkDate(element, date) {
+            document.querySelectorAll('.day-cell').forEach(cell => {
+                cell.classList.remove('correct', 'wrong');
+            });
+            const feedback = document.getElementById('calendar-feedback');
+            
+            if (date === 25) {
+                element.classList.add('correct');
+                feedback.innerText = "It's your day! Let's go ✨";
+                setTimeout(() => goToSection(1), 1000);
+            } else {
+                element.classList.add('wrong');
+                feedback.innerText = "Try again, love 💕";
+                setTimeout(() => element.classList.remove('wrong'), 500);
+            }
+        }
+
+        // --- Gift ---
+        function openGift() {
+            const gift = document.querySelector('.gift-container');
+            const startBtn = document.getElementById('start-btn');
+            if (!gift.classList.contains('open')) {
+                gift.classList.add('open');
+                setTimeout(() => {
+                    startBtn.classList.remove('hidden');
+                }, 600);
+            }
+        }
+
+    
+        // --- Typewriter letter ---
+        function startTyping() {
+            const el = document.getElementById('typewriter-text');
+            el.innerHTML = "";
+            clearTimeout(typingTimeout);
+
+            let i = 0;
+            function type() {
+                if (i < suratCinta.length) {
+                    if (suratCinta.substr(i, 4) === "<br>") {
+                        el.innerHTML += "<br>"; i += 4;
+                    } else {
+                        el.innerHTML += suratCinta.charAt(i);
+                        i++;
+                    }
+                    typingTimeout = setTimeout(type, 40);
+                }
+            }
+            type();
+        }
+
+        // --- Photobooth ---
+        function startPhotoboothSession() {
+            const video = document.getElementById('camera-stream');
+            const startBtn = document.getElementById('start-camera-btn');
+            const snapBtn = document.getElementById('snap-btn');
+            const gridPreview = document.getElementById('grid-preview-container');
+            const instruction = document.getElementById('photo-instruction');
+
+            photoCount = 0; photosTaken = [];
+            for(let i=1; i<=6; i++) {
+                const box = document.getElementById(`preview-${i}`);
+                if (box) { box.innerHTML = i; box.classList.remove('filled'); }
+            }
+
+            video.classList.remove('hidden');
+            gridPreview.classList.remove('hidden');
+            startBtn.classList.add('hidden');
+            
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    videoStream = stream;
+                    video.srcObject = stream;
+                    video.play();
+                    snapBtn.classList.remove('hidden');
+                    instruction.classList.remove('hidden');
+                    instruction.innerText = "0/6 photos";
+                })
+                .catch(err => {
+                    alert("Camera error: " + err);
+                    stopCameraAndBack();
+                });
+        }
+
+        function takePhoto() {
+            if (photoCount >= 6) return;
+            const video = document.getElementById('camera-stream');
+            
+            // Flash
+            const flash = document.getElementById('flash-effect');
+            flash.classList.add('flash-animation');
+            setTimeout(() => flash.classList.remove('flash-animation'), 200);
+
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.translate(canvas.width, 0);
+            ctx.scale(-1, 1);
+            ctx.drawImage(video, 0, 0);
+            
+            const imgData = canvas.toDataURL('image/png');
+            photosTaken.push(imgData);
+            photoCount++;
+
+            const previewBox = document.getElementById(`preview-${photoCount}`);
+            previewBox.innerHTML = `<img src="${imgData}">`;
+            previewBox.classList.add('filled');
+            
+            document.getElementById('photo-instruction').innerText = `${photoCount}/6 photos`;
+
+            if (photoCount === 6) {
+                document.getElementById('photo-instruction').innerText = "Creating... ✨";
+                setTimeout(processFinalGrid, 800);
+            }
+        }
+
+        function processFinalGrid() {
+            const canvas = document.getElementById('photo-canvas');
+            const resultImg = document.getElementById('photo-result');
+            const downloadLink = document.getElementById('download-link');
+            const cameraUI = document.getElementById('camera-ui');
+            const resultUI = document.getElementById('result-ui');
+
+            const w = 800, h = 1100;
+            canvas.width = w; canvas.height = h;
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = "#fffaf0";
+            ctx.fillRect(0, 0, w, h);
+
+            const photoWidth = (w - 120) / 2;
+            const photoHeight = photoWidth * 0.75;
+            let loaded = 0;
+
+            photosTaken.forEach((src, i) => {
+                const img = new Image();
+                img.onload = () => {
+                    const col = i % 2;
+                    const row = Math.floor(i / 2);
+                    const x = 40 + col * (photoWidth + 40);
+                    const y = 60 + row * (photoHeight + 20);
+
+                    ctx.drawImage(img, 0, 0, img.width, img.height, x, y, photoWidth, photoHeight);
+                    ctx.strokeStyle = "#ebcbcb";
+                    ctx.lineWidth = 4;
+                    ctx.strokeRect(x, y, photoWidth, photoHeight);
+
+                    loaded++;
+                    if (loaded === 6) {
+                        ctx.font = "bold 40px 'Playfair Display'";
+                        ctx.fillStyle = "#b88080";
+                        ctx.textAlign = "center";
+                        ctx.fillText("Happy Birthday Nisrina!", w/2, h - 120);
+                        
+                        const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+                        ctx.font = "20px 'Quicksand'";
+                        ctx.fillStyle = "#a78686";
+                        ctx.fillText(date, w/2, h - 70);
+
+                        resultImg.src = canvas.toDataURL('image/png');
+                        downloadLink.href = resultImg.src;
+                        downloadLink.download = `photobooth_nisrina_${Date.now()}.png`;
+
+                        cameraUI.classList.add('hidden');
+                        resultUI.classList.remove('hidden');
+                        stopCamera();
+                    }
+                };
+                img.src = src;
+            });
+        }
+
+        function resetCamera() {
+            stopCamera();
+            document.getElementById('result-ui').classList.add('hidden');
+            document.getElementById('snap-btn').classList.add('hidden');
+            document.getElementById('photo-instruction').classList.add('hidden');
+            document.getElementById('start-camera-btn').classList.remove('hidden');
+            document.getElementById('camera-ui').classList.remove('hidden');
+            document.getElementById('grid-preview-container').classList.add('hidden');
+            document.getElementById('camera-stream').classList.add('hidden');
+        }
+
+        function stopCamera() {
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop());
+                videoStream = null;
+            }
+        }
+
+        function stopCameraAndBack() {
+            stopCamera();
+            goToSection('menu');
+        }
+
+        // --- Tickets ---
+        function toggleTicket(el) {
+            document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
+            el.classList.add('revealed');
+        }
+
+        // --- Reset coupons (close all tickets) ---
+        function resetCoupons() {
+            document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
+        }
+
+        // --- Mascot ---
+        function mascotTalk() {
+            const mascot = document.querySelector('.mascot-container');
+            const bubble = document.getElementById('mascot-text');
+            const messages = ["You're amazing! 🌸", "Happy birthday, lovely! 🎂", "Rayhan adores you 💕", "You're the star today ✨", "Blow the candles! 🕯️"];
+            bubble.innerText = messages[Math.floor(Math.random() * messages.length)];
+            mascot.classList.add('talking');
+            setTimeout(() => mascot.classList.remove('talking'), 3000);
+        }
+
+        // --- Sparkles / effects ---
+        function createSparkles() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const s = document.createElement('div');
+                    s.classList.add('sparkle');
+                    s.style.left = Math.random() * window.innerWidth + 'px';
+                    s.style.top = Math.random() * window.innerHeight + 'px';
+                    s.style.width = s.style.height = Math.random() * 8 + 4 + 'px';
+                    s.style.background = `hsl(${Math.random() * 20 + 340}, 70%, 70%)`;
+                    document.body.appendChild(s);
+                    setTimeout(() => s.remove(), 1000);
+                }, i * 50);
+            }
+        }
+
+        // --- Full Reset (Play Again) ---
+        function fullResetApp() {
+            stopCamera();
+            resetCoupons();
+            
+            // Reset calendar visuals
+            document.querySelectorAll('.day-cell').forEach(cell => {
+                cell.classList.remove('correct', 'wrong');
+            });
+            document.getElementById('calendar-feedback').innerText = '';
+
+            // Reset gift box
+            const gift = document.querySelector('.gift-container');
+            if (gift) gift.classList.remove('open');
+            document.getElementById('start-btn').classList.add('hidden');
+
+            // Reset cake
+            document.querySelectorAll('.flame').forEach(f => f.classList.remove('lit'));
+            document.getElementById('cake-text').innerText = "The candles are waiting...";
+            document.getElementById('lightBtn').style.display = 'block';
+            document.getElementById('wish-section').style.display = 'none';
+            document.getElementById('blowBtn').style.display = 'none';
+            
+            // Reset typewriter
+            document.getElementById('typewriter-text').innerHTML = "";
+
+            goToSection(0);
+        }
+
+        // Cursor sparkles
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.15) {
+                const spark = document.createElement('div');
+                spark.classList.add('sparkle');
+                spark.style.left = e.clientX + 'px';
+                spark.style.top = e.clientY + 'px';
+                spark.style.background = '#f5d5d5';
+                spark.style.width = spark.style.height = '6px';
+                document.body.appendChild(spark);
+                setTimeout(() => spark.remove(), 800);
+            }
+        });
+    </script>
+</body>
+</html>
