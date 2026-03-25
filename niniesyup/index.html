@@ -34,7 +34,7 @@
             overflow-x: hidden;
         }
 
-        /* Soft background elements */
+        
         body::before {
             content: '';
             position: fixed;
@@ -76,7 +76,7 @@
             border: 1px solid rgba(255, 255, 255, 0.7);
         }
 
-        /* Decorative corner elements */
+        
         .corner-flower {
             position: absolute;
             width: 100px;
@@ -100,7 +100,7 @@
             transform: rotate(165deg);
         }
 
-        /* All sections */
+        
         .section {
             display: none;
             opacity: 0;
@@ -118,7 +118,7 @@
             opacity: 1;
         }
 
-        /* Romantic typography */
+        
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.4rem;
@@ -149,7 +149,7 @@
             font-weight: 300;
         }
 
-        /* Buttons — soft, romantic */
+        
         .btn {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(4px);
@@ -191,7 +191,7 @@
             box-shadow: none;
         }
 
-        /* Back to menu button group */
+        
         .nav-footer {
             width: 100%;
             display: flex;
@@ -199,7 +199,7 @@
             margin-top: 16px;
         }
 
-        /* Section 0 — Calendar */
+        
         .calendar-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
@@ -284,7 +284,7 @@
             font-style: italic;
         }
 
-        /* Section 1 — Gift box */
+        
         .gift-container {
             width: 180px;
             height: 180px;
@@ -377,7 +377,7 @@
             opacity: 1;
         }
 
-        /* Section 2 — Make a wish (cake) */
+        
         .cake-graphic {
             width: 200px;
             height: 160px;
@@ -527,7 +527,7 @@
             box-shadow: 0 2px 0 #b48484;
         }
 
-        /* Section 3 — Love letter (typewriter) */
+        
         .scroll-container {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(4px);
@@ -559,10 +559,10 @@
 
         @keyframes blink { 50% { opacity: 0; } }
 
-        /* Section 4 — Niniesyup (film strip) */
+        
        .film-strip {
         width: 100%;
-        background: #1a1a1a; /* Warna film hitam pekat */
+        background: #1a1a1a; 
         border-radius: 30px;
         padding: 10px 5px;
         margin: 20px 0;
@@ -574,7 +574,7 @@
         border: 1px solid #6b4f4f;
         overflow: hidden;
     }
-    /* Efek lubang film di sisi atas dan bawah */
+    
     .film-strip::before,
     .film-strip::after {
         content: '';
@@ -608,17 +608,17 @@
         border-top: 2px solid #4a3a3a;
     }
 
-    /* Celah antar baris - EFEK ROLL FILM ASLI */
+    
     .film-row {
         position: relative;
-        margin-bottom: 25px; /* Celah antar baris */
+        margin-bottom: 25px; 
     }
 
     .film-row:last-child {
         margin-bottom: 5px;
     }
 
-    /* Lubang-lubang film di ANTAR BARIS */
+    
     .film-row::before {
         content: '';
         position: absolute;
@@ -646,33 +646,33 @@
         opacity: 0.8;
     }
 
-    /* Baris terakhir tidak perlu lubang di bawah */
+    
     .film-row:last-child::before {
         display: none;
     }
 
-    /* Container untuk setiap baris film */
+    
     .film-row-content {
         display: flex;
         gap: 12px;
         width: 100%;
         padding: 8px 0;
         will-change: transform;
-        background: rgba(0, 0, 0, 0.2); /* Sedikit transparan */
+        background: rgba(0, 0, 0, 0.2); 
         border-radius: 4px;
     }
 
-    /* Baris ganjil (1,3) - bergerak ke kiri */
+    
     .film-row.left-to-right .film-row-content {
         animation: scrollLeftToRight 40s linear infinite;
     }
 
-    /* Baris genap (2,4) - bergerak ke kanan */
+    
     .film-row.right-to-left .film-row-content {
         animation: scrollRightToLeft 40s linear infinite;
     }
 
-    /* Animasi dari kiri ke kanan */
+    
     @keyframes scrollLeftToRight {
         0% {
             transform: translateX(-50%);
@@ -682,7 +682,7 @@
         }
     }
 
-    /* Animasi dari kanan ke kiri */
+    
     @keyframes scrollRightToLeft {
         0% {
             transform: translateX(0);
@@ -692,16 +692,16 @@
         }
     }
 
-    /* Berhenti scroll saat hover */
+    
     .film-row:hover .film-row-content {
         animation-play-state: paused;
     }
 
-    /* Item film dengan rasio 5:4 */
+    
     .film-item {
         flex: 0 0 auto;
-        width: 130px; /* 5 bagian */
-        height: 104px; /* 4 bagian (130:104 = 5:4) */
+        width: 130px; 
+        height: 104px; 
         border-radius: 6px;
         overflow: hidden;
         box-shadow: 
@@ -715,7 +715,7 @@
         position: relative;
     }
 
-    /* Foto di dalam item */
+    
     .film-item img {
         width: 100%;
         height: 100%;
@@ -725,13 +725,13 @@
         display: block;
     }
 
-    /* Efek hover - foto muncul warnanya */
+    
     .film-item:hover img {
         filter: grayscale(0%) sepia(0%) brightness(1) contrast(1.2);
         transform: scale(1.15);
     }
 
-    /* Efek hover - item membesar */
+    
     .film-item:hover {
         transform: translateY(-10px) scale(1.08);
         box-shadow: 
@@ -741,7 +741,7 @@
         z-index: 20;
     }
 
-    /* Efek kilatan film saat hover */
+    
     .film-item::after {
         content: '';
         position: absolute;
@@ -759,7 +759,7 @@
         opacity: 1;
     }
 
-    /* Efek garis tepi film (seperti seluloid) */
+    
     .film-item::before {
         content: '';
         position: absolute;
@@ -773,7 +773,7 @@
         z-index: 1;
     }
 
-    /* Gradient fade di kiri dan kanan */
+    
     .film-strip .fade-left {
         position: absolute;
         top: 0;
@@ -796,7 +796,7 @@
         pointer-events: none;
     }
 
-    /* Efek tekstur film (grain) */
+    
     .film-strip .film-grain {
         position: absolute;
         top: 0;
@@ -810,7 +810,7 @@
         mix-blend-mode: overlay;
     }
 
-    /* Responsive */
+    
     @media (max-width: 480px) {
         .film-item {
             width: 100px;
@@ -823,7 +823,7 @@
         }
     }
 
-        /* Section 5 — Our song */
+        
         .vinyl-wrapper {
             width: 200px;
             height: 200px;
@@ -874,171 +874,420 @@
             display: block;
         }
 
-        /* Section 6 — Birthday treats */
-        .treats-container {
-            width: 100%;
-            max-width: 320px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin: 15px 0;
-        }
+        
+       .treats-container {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 10px 0;
+}
 
-        .ticket {
-            background: white;
-            border-radius: 60px 20px 20px 60px;
-            position: relative;
-            height: 90px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 6px 14px rgba(140, 90, 90, 0.1);
-            border: 1px solid #f3d9d9;
-            overflow: hidden;
-        }
+.ticket {
+    background: white;
+    border-radius: 60px 20px 20px 60px;
+    position: relative;
+    height: 110px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 8px 15px rgba(140, 90, 90, 0.15);
+    border: 1px solid #ffd9d9;
+    overflow: hidden;
+}
 
-        .ticket-cover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #ebc8c8, #dcacac);
-            border-radius: 60px 20px 20px 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: white;
-            letter-spacing: 1px;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 2;
-        }
+.ticket:hover {
+    transform: scale(1.02) translateY(-3px);
+    box-shadow: 0 12px 20px rgba(180, 100, 100, 0.2);
+}
 
-        .ticket-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #775e5e;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(4px);
-            z-index: 1;
-        }
+.ticket-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #ffd1d1, #ffb6c1);
+    border-radius: 60px 20px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 1px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-        .ticket.revealed .ticket-cover {
-            transform: translateX(100%);
-        }
+.ticket-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 250, 245, 0.95);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
 
-        .wa-link {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0 20px;
-            box-shadow: 0 6px 0 #128C7E;
-            transition: all 0.1s;
-        }
+.ticket.revealed .ticket-cover {
+    transform: translateX(100%);
+}
 
-        .wa-link:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #128C7E;
-        }
 
-        /* Section 7 — Photobooth */
-        .photobooth-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(4px);
-            border-radius: 40px;
-            padding: 20px;
-            width: 100%;
-            max-width: 340px;
-            margin: 15px 0;
-            border: 1px solid #ffeaea;
-        }
+.wa-link {
+    background: linear-gradient(145deg, #25D366, #128C7E);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 60px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 8px 0 #075E54;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+    transition: all 0.2s;
+    border: 2px solid #fff;
+}
 
-        #camera-stream {
-            width: 100%;
-            aspect-ratio: 4/3;
-            border-radius: 24px;
-            background: #f0d9d9;
-            transform: scaleX(-1);
-            border: 3px solid white;
-        }
+.wa-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 0 #075E54;
+}
 
-        .preview-strip {
-            display: flex;
-            justify-content: space-between;
-            gap: 6px;
-            margin-top: 15px;
-        }
+.wa-link:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #075E54;
+}
 
-        .preview-box {
-            width: 16%;
-            aspect-ratio: 4/5;
-            background: #fae1e1;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            color: #b78484;
-            border: 1px dashed #dcb5b5;
-            overflow: hidden;
-        }
 
-        .preview-box.filled {
-            border: 2px solid #b78383;
-        }
+@media (max-width: 480px) {
+    .ticket {
+        height: 100px;
+    }
+    
+    .ticket-cover {
+        font-size: 1.2rem;
+    }
+    
+    .ticket-content p {
+        font-size: 0.9rem;
+    }
+}
 
-        .preview-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
-        .snap-btn {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #f8e2e2;
-            border: 4px solid white;
-            box-shadow: 0 6px 0 #cf9f9f, 0 10px 20px rgba(150, 80, 80, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #8a5c5c;
-            cursor: pointer;
-            transition: all 0.1s;
-            margin: 15px auto;
-        }
 
-        .snap-btn:active {
-            transform: translateY(6px);
-            box-shadow: 0 4px 0 #cf9f9f, 0 10px 20px rgba(150, 80, 80, 0.2);
-        }
 
-        #photo-result {
-            width: 100%;
-            border-radius: 32px;
-            border: 4px solid white;
-            box-shadow: 0 10px 20px rgba(100, 50, 50, 0.2);
-        }
 
-        /* Replay button */
+
+
+
+.photobooth-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 40px;
+    padding: 20px 15px;
+    border: 1px solid #ffeaea;
+    box-sizing: border-box;
+}
+
+
+#mode-selection {
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#mode-selection .btn {
+    flex: 1;
+    flex-direction: column;
+    padding: 15px 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #ffd1d1;
+}
+
+#mode-selection .btn i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #b88080;
+}
+
+#mode-selection .btn:hover {
+    background: #ffe9e9;
+    transform: translateY(-3px);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+#camera-ui {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+#camera-ui #photo-instruction {
+    font-size: 0.95rem;
+    margin: 5px 0 10px;
+    text-align: center;
+    color: #b88080;
+    font-weight: 600;
+}
+
+
+#camera-ui .preview-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+#camera-ui .preview-box {
+    width: calc(33.33% - 8px); 
+    max-width: 80px;
+    aspect-ratio: 1/1; 
+    background: #fae1e1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #b78484;
+    border: 2px dashed #dcb5b5;
+    overflow: hidden;
+}
+
+#camera-ui .preview-box.filled {
+    border: 2px solid #b78383;
+}
+
+#camera-ui .preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+#camera-ui .camera-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    background: #f0d9d9;
+    border-radius: 24px;
+    padding: 4px;
+    box-shadow: 0 8px 20px rgba(180, 130, 130, 0.15);
+}
+
+#camera-stream {
+    width: 100%;
+    height: auto;
+    max-height: 55vh; 
+    border-radius: 20px;
+    transform: scaleX(-1); 
+    border: 2px solid white;
+    object-fit: contain; 
+    background: #000; 
+}
+
+
+#camera-ui .snap-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 4px solid #fff;
+    box-shadow: 0 6px 0 #cf9f9f, 0 8px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #8a5c5c;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.1s;
+}
+
+#camera-ui .snap-btn:active {
+    bottom: 14px;
+    box-shadow: 0 0 0 #cf9f9f, 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#camera-ui #start-camera-btn {
+    margin: 10px auto;
+    padding: 12px 25px;
+}
+
+#result-ui {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result-ui .photobooth-card {
+    width: 100%;
+    max-width: 450px; 
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+#photo-result {
+    display: block;
+    width: 100% !important;
+    height: auto !important; 
+    max-width: 100% !important;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    object-fit: contain !important; 
+}
+
+
+.portrait-mode #photo-result {
+    max-width: 320px !important; 
+}
+
+
+.landscape-mode #photo-result {
+    max-width: 100% !important; 
+}
+
+
+#result-ui p {
+    margin: 8px 0 5px;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+
+
+#result-ui div[style*="flex"] {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin: 20px 0 5px !important;
+    flex-wrap: wrap;
+}
+
+#result-ui .btn {
+    padding: 12px 25px !important;
+    font-size: 1rem !important;
+    min-width: 120px !important;
+    border-radius: 50px;
+}
+
+.nav-footer .btn {
+    margin-top: 15px;
+}
+
+
+@media (max-width: 480px) {
+    
+    #camera-ui.portrait-mode .preview-box {
+        max-width: 90px;
+    }
+    
+    #camera-ui.portrait-mode .snap-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    #result-ui .photobooth-card {
+        padding: 20px 12px 25px;
+    }
+    
+    .portrait-mode #photo-result {
+        max-width: 260px !important;
+    }
+    
+    
+    #camera-ui.landscape-mode .preview-box {
+        font-size: 0.6rem;
+    }
+    
+    #camera-ui.landscape-mode .snap-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .landscape-mode #photo-result {
+        max-width: 340px !important;
+    }
+    
+    #result-ui .btn {
+        padding: 8px 20px !important;
+        font-size: 0.9rem !important;
+        min-width: 90px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    
+    #camera-ui.portrait-mode .preview-box {
+        max-width: 75px;
+    }
+    
+    #result-ui .photobooth-card {
+        padding: 15px 10px 20px;
+    }
+    
+    .portrait-mode #photo-result {
+        max-width: 220px !important;
+    }
+    
+    .landscape-mode #photo-result {
+        max-width: 280px !important;
+    }
+    
+    #result-ui .btn {
+        padding: 6px 15px !important;
+        font-size: 0.85rem !important;
+        min-width: 80px !important;
+    }
+}
+
+        
         .replay-btn {
             margin-top: 20px;
             padding: 14px 36px;
@@ -1071,7 +1320,7 @@
             transform: rotate(180deg);
         }
 
-        /* Mascot */
+        
         .mascot-container {
             position: fixed;
             bottom: 20px;
@@ -1117,7 +1366,7 @@
             opacity: 1;
         }
 
-        /* Celebration effects */
+        
         #flash-effect {
             position: fixed;
             top: 0;
@@ -1158,7 +1407,7 @@
 
 
 
-         /* Overlay untuk mencegah navigasi */
+         
     .section-blocked {
         position: relative;
     }
@@ -1204,12 +1453,12 @@
         50% { transform: translateX(-50%) translateY(-5px); }
     }
     
-    /* Cake section */
+    
     .cake-section {
         position: relative;
     }
     
-    /* Validasi karakter */
+    
     .char-counter {
         font-size: 0.8rem;
         margin-top: 5px;
@@ -1225,7 +1474,7 @@
         color: #e07c7c;
     }
     
-    /* Tombol terkunci */
+    
     .btn-locked {
         position: relative;
         opacity: 0.6;
@@ -1241,7 +1490,7 @@
         font-size: 1rem;
     }
     
-    /* Peringatan */
+    
     .warning-message {
         background: #ffe5e5;
         color: #b85c5c;
@@ -1340,7 +1589,7 @@
                 </div>
                 <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(5)">
                     <i class="fas fa-headphones" style="font-size: 2rem; margin-bottom: 8px;"></i>
-                    <span>Our Song</span>
+                    <span>Song</span>
                 </div>
                 <div class="btn" style="flex-direction: column; padding: 20px 10px; background: rgba(255,255,240,0.6);" onclick="goToSection(7)">
                     <i class="fas fa-camera-retro" style="font-size: 2rem; margin-bottom: 8px;"></i>
@@ -1684,95 +1933,133 @@
         </div>
 
         <!-- Section 6: Birthday Treats -->
-        <div id="section-6" class="section">
-            <h1>Birthday Treats</h1>
-            <div class="subhead">choose your surprise</div>
-            
-            <div class="treats-container">
-                <div class="ticket" onclick="toggleTicket(this)">
-                    <div class="ticket-cover">Treat #1</div>
-                    <div class="ticket-content">🍽️ Dinner date</div>
-                </div>
-                <div class="ticket" onclick="toggleTicket(this)">
-                    <div class="ticket-cover">Treat #2</div>
-                    <div class="ticket-content">📸 Photobox session</div>
-                </div>
-                <div class="ticket" onclick="toggleTicket(this)">
-                    <div class="ticket-cover">Treat #3</div>
-                    <div class="ticket-content">✨ Secret surprise</div>
-                </div>
+<div id="section-6" class="section">
+    <h1>🎁 Birthday Treats</h1>
+    <div class="subhead">pilih hadiah spesialmu</div>
+    
+    <div style="text-align: center; margin: 5px 0 15px; background: rgba(255, 230, 240, 0.5); padding: 10px; border-radius: 30px; width: 100%; max-width: 320px;">
+        <p style="margin: 0; font-size: 0.9rem;">
+            <i class="fas fa-star" style="color: #ffb3b3;"></i> 
+            <strong>Caranya:</strong> Klik tiket, screenshot, kirim ke WA
+            <i class="fas fa-star" style="color: #ffb3b3;"></i>
+        </p>
+    </div>
+    
+    <div class="treats-container">
+        <!-- TIKET 1 - Dinner Date -->
+        <div class="ticket" onclick="toggleTicket(this)">
+            <div class="ticket-cover">
+                <span style="font-size: 1.5rem;">🎫</span> Treat #1
             </div>
-            
-            <a href="https://wa.me/6281229280741?text=I%20want%20to%20claim%20my%20birthday%20treat%20💖" class="wa-link" target="_blank">
-                <i class="fab fa-whatsapp"></i> Claim via WA
-            </a>
-            
-            <div class="nav-footer">
-                <button class="btn btn-outline" onclick="goToSection('menu')">
-                    <i class="fas fa-chevron-left"></i> Menu
-                </button>
+            <div class="ticket-content">
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">🍽️</span>
+                    <p style="margin: 5px 0 0; font-weight: bold;">Makann</p>
+                </div>
             </div>
         </div>
+        
+        <!-- TIKET 2 - Photobox -->
+        <div class="ticket" onclick="toggleTicket(this)">
+            <div class="ticket-cover">
+                <span style="font-size: 1.5rem;">🎫</span> Treat #2
+            </div>
+            <div class="ticket-content">
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">📸</span>
+                    <p style="margin: 5px 0 0; font-weight: bold;">Foto tembok ratapan solo</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- TIKET 3 - Secret Surprise -->
+        <div class="ticket" onclick="toggleTicket(this)">
+            <div class="ticket-cover">
+                <span style="font-size: 1.5rem;">🎫</span> Treat #3
+            </div>
+            <div class="ticket-content">
+                <div style="text-align: center;">
+                    <span style="font-size: 2rem;">✨</span>
+                    <p style="margin: 5px 0 0; font-weight: bold;">Secret Surprise</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- TOMBOL WA dengan DESAIN CANTIK -->
+    <a href="https://wa.me/6281229280741?text=Halo!%20Aku%20mau%20klaim%20hadiah%20ultah%20nih%20🎁%0A%0A*Ini%20screenshot%20tiketnya:*%0A[upload%20foto%20di%20sini]" 
+       class="wa-link" target="_blank" 
+       style="background: linear-gradient(145deg, #25D366, #128C7E); display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 25px; border-radius: 60px; color: white; text-decoration: none; font-weight: bold; box-shadow: 0 8px 0 #075E54; width: 100%; max-width: 280px; margin: 10px auto; transition: all 0.2s; border: 2px solid #fff;">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        <span style="flex: 1;">Kirim ke WhatsApp</span>
+        <i class="fas fa-arrow-right"></i>
+    </a>
+    <!-- TOMBOL KEMBALI KE MENU -->
+    <div class="nav-footer" style="margin-top: 20px;">
+        <button class="btn btn-outline" onclick="goToSection('menu')">
+            <i class="fas fa-chevron-left"></i> Menu
+        </button>
+    </div>
+</div>
 
         <!-- Section 7: Photobooth -->
-        <div id="section-7" class="section">
-            <h1>Photobooth</h1>
-            <div class="subhead">capture the smiles</div>
-            
-            <div id="camera-ui">
-                <div class="photobooth-card">
-                    <video id="camera-stream" autoplay playsinline class="hidden"></video>
-                    
-                    <div id="grid-preview-container" class="preview-strip hidden">
-                        <div class="preview-box" id="preview-1">1</div>
-                        <div class="preview-box" id="preview-2">2</div>
-                        <div class="preview-box" id="preview-3">3</div>
-                        <div class="preview-box" id="preview-4">4</div>
-                        <div class="preview-box" id="preview-5">5</div>
-                        <div class="preview-box" id="preview-6">6</div>
-                    </div>
-                </div>
-
-                <button id="start-camera-btn" class="btn" onclick="startPhotoboothSession()">
-                    <i class="fas fa-camera"></i> Start Camera
-                </button>
-                
-                <div id="snap-btn" class="snap-btn hidden" onclick="takePhoto()">
-                    <i class="fas fa-camera"></i>
-                </div>
-                
-                <p id="photo-instruction" class="hidden" style="color: #a77474;">0/6 photos</p>
-            </div>
-
-            <div id="result-ui" class="hidden" style="width: 100%; text-align: center;">
-                <div class="photobooth-card">
-                    <img id="photo-result" alt="Your photo strip">
-                </div>
-                <div style="display: flex; gap: 12px; justify-content: center; margin: 20px 0;">
-                    <a id="download-link" class="btn" download="photostrip.png">
-                        <i class="fas fa-download"></i> Save
-                    </a>
-                    <button class="btn btn-outline" onclick="resetCamera()">
-                        <i class="fas fa-redo"></i> Retake
-                    </button>
-                </div>
-            </div>
-            
-            <div class="nav-footer">
-                <button class="btn btn-outline" onclick="stopCameraAndBack()">
-                    <i class="fas fa-chevron-left"></i> Menu
-                </button>
-            </div>
+     <!-- Section 7: Photobooth -->
+<div id="section-7" class="section">
+    <h1>Photobooth</h1>
+    <div class="subhead">capture the smiles</div>
+    
+    <div id="camera-ui">
+        <button id="start-camera-btn" class="btn" onclick="startPhotoboothSession()">
+            <i class="fas fa-camera"></i> Start Camera
+        </button>
+        
+        <p id="photo-instruction" class="hidden">0/6 photos</p>
+        
+        <div id="grid-preview-container" class="preview-strip hidden">
+            <div class="preview-box" id="preview-1">1</div>
+            <div class="preview-box" id="preview-2">2</div>
+            <div class="preview-box" id="preview-3">3</div>
+            <div class="preview-box" id="preview-4">4</div>
+            <div class="preview-box" id="preview-5">5</div>
+            <div class="preview-box" id="preview-6">6</div>
         </div>
-
-        <canvas id="photo-canvas" class="hidden"></canvas>
+        
+        <div class="camera-wrapper">
+            <video id="camera-stream" autoplay playsinline class="hidden"></video>
+            <button id="snap-btn" class="snap-btn hidden" onclick="takePhoto()">
+                <i class="fas fa-camera"></i>
+            </button>
+        </div>
     </div>
+    
+    <div id="result-ui" class="hidden">
+        <div class="photobooth-card">
+            <img id="photo-result" alt="Your photo strip">
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 15px;">
+            <a id="download-link" class="btn" download="photostrip.png">
+                <i class="fas fa-download"></i> Save
+            </a>
+            <button class="btn btn-outline" onclick="resetCamera()">
+                <i class="fas fa-redo"></i> Retake
+            </button>
+        </div>
+    </div>
+    
+    <canvas id="photo-canvas" class="hidden"></canvas>
+    
+    <div class="nav-footer">
+        <button class="btn btn-outline" onclick="stopCameraAndBack()">
+            <i class="fas fa-chevron-left"></i> Menu
+        </button>
+    </div>
+</div>
 
     <script>
-        // EmailJS init
+
         (function(){ emailjs.init("kA5Ef6QA0lbWQ4mol"); })();
 
-        // --- Data ---
+
         const suratCinta = `My Dearest Nisrina,<br><br>Happy Birthday.<br><br>You are the sun that brightens my mornings, the rain that brings peace to my nights, and the autumn leaves that color my world. You are the seasons of my life.<br><br>My prayer for you is simple: may every step be guided by grace, may your heart always be full of joy, and may all your dreams come true.<br><br>I promise to always be your safe space, your biggest supporter, and your best friend.<br><br>Yours forever,<br>Naufal Rayhan Ali Rahman`;
 
         let typingTimeout;
@@ -1780,37 +2067,37 @@
         let photoCount = 0;
         let photosTaken = [];
 
-        // --- Navigation ---
-       // ==================== STATUS GLOBAL SECTION ====================
-    // Menyimpan status setiap section
+
+
+
     const sectionStatus = {
-        0: { completed: false }, // Calendar
-        1: { completed: false }, // Gift
-        2: { completed: false, wishSent: false, candlesLit: false }, // Make a Wish
-        3: { completed: false }, // Letter
-        4: { completed: false }, // Film
-        5: { completed: false }, // Song
-        6: { completed: false }, // Treats
-        7: { completed: false }  // Photobooth
+        0: { completed: false },
+        1: { completed: false },
+        2: { completed: false, wishSent: false, candlesLit: false },
+        3: { completed: false },
+        4: { completed: false },
+        5: { completed: false },
+        6: { completed: false },
+        7: { completed: false }
     };
     
-    // ==================== FUNGSI NAVIGASI DENGAN CEK ====================
+
     function goToSection(sectionNum) {
         const currentSection = document.querySelector('.section.active');
         const currentSectionId = currentSection ? currentSection.id : null;
         
-        // Cek apakah section 2 (Make a Wish) sedang aktif dan belum selesai
+
         if (currentSectionId === 'section-2') {
             if (!sectionStatus[2].wishSent) {
-                // Tampilkan pesan bahwa harus selesai dulu
+
                 showTemporaryMessage('Selesaikan Make a Wish dulu ya! 🎂');
                 return;
             }
         }
         
-        // Cek section lain jika perlu (bisa ditambahkan nanti)
+
         
-        // Reset section yang akan ditinggalkan
+
         if (currentSectionId === 'section-2') {
             resetSection2();
         } else if (currentSectionId === 'section-0') {
@@ -1829,7 +2116,7 @@
             resetSection7();
         }
         
-        // Pindah ke section baru
+
         document.querySelectorAll('.section').forEach(sec => {
             sec.classList.remove('active');
         });
@@ -1841,17 +2128,17 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Trigger khusus untuk section tertentu
+
         if (sectionNum === 3) startTyping();
     }
     
-    // Fungsi untuk mencoba kembali ke menu (dengan cek)
+
     function tryGoToMenu() {
         const currentSection = document.querySelector('.section.active');
         
         if (currentSection.id === 'section-2') {
             if (!sectionStatus[2].wishSent) {
-                // Tampilkan warning
+
                 document.getElementById('wishWarning').style.display = 'block';
                 setTimeout(() => {
                     document.getElementById('wishWarning').style.display = 'none';
@@ -1860,11 +2147,11 @@
             }
         }
         
-        // Jika aman, lanjut ke menu
+
         goToSection('menu');
     }
     
-    // ==================== FUNGSI UNTUK MAKE A WISH ====================
+
     function lightCandles() {
         if (sectionStatus[2].candlesLit) return;
         
@@ -1878,7 +2165,7 @@
         sectionStatus[2].candlesLit = true;
     }
 
-    // Setup wish input
+
     const wishInput = document.getElementById("wishInput");
     const sendWishBtn = document.getElementById("sendWishBtn");
     const charCounter = document.getElementById("charCounter");
@@ -1910,14 +2197,14 @@
         sendWishBtn.innerText = "Mengirim...";
         sendWishBtn.disabled = true;
 
-        // Kirim via EmailJS
+
         emailjs.send('service_jyffvjo', 'template_aq75hcp', {
             message: wishText,
             to_name: "Rayhan",
             from_name: "Nisrina"
         })
         .then(() => {
-            // Update status
+
             sectionStatus[2].wishSent = true;
             
             document.getElementById("cake-text").innerText = "Harapan terkirim! ✨";
@@ -1925,7 +2212,7 @@
             document.getElementById("blowBtn").style.display = "flex";
             document.getElementById("successMessage").style.display = "block";
             
-            // Hapus efek terkunci di tombol menu
+
             document.getElementById("backToMenuBtn").classList.remove('nav-blocked');
             
             createSparkles();
@@ -1942,10 +2229,10 @@
         document.getElementById("cake-text").innerText = "Selamat! Harapanmu melayang ke langit 🌟";
         document.getElementById("blowBtn").style.display = "none";
         
-        // Tandai section 2 sebagai completed
+
         sectionStatus[2].completed = true;
         
-        // Tampilkan pesan bisa lanjut
+
         setTimeout(() => {
             if (confirm('Harapan sudah terkirim! Lanjut ke menu?')) {
                 goToSection('menu');
@@ -1953,9 +2240,9 @@
         }, 2000);
     }
 
-    // ==================== FUNGSI RESET SETIAP SECTION ====================
+
     function resetSection0() {
-        // Reset calendar
+
         document.querySelectorAll('.day-cell').forEach(cell => {
             cell.classList.remove('correct', 'wrong');
         });
@@ -1964,7 +2251,7 @@
     }
     
     function resetSection1() {
-        // Reset gift box
+
         const gift = document.querySelector('.gift-container');
         if (gift) gift.classList.remove('open');
         document.getElementById('start-btn').classList.add('hidden');
@@ -1972,7 +2259,7 @@
     }
     
     function resetSection2() {
-        // Reset cake & wish
+
         document.querySelectorAll('.flame').forEach(f => f.classList.remove('lit'));
         document.getElementById('cake-text').innerText = "Lilin masih padam...";
         document.getElementById('lightBtn').style.display = 'block';
@@ -1981,22 +2268,22 @@
         document.getElementById('successMessage').style.display = 'none';
         document.getElementById('wishWarning').style.display = 'none';
         
-        // Reset input
+
         wishInput.value = '';
         charCounter.innerText = '0/10 karakter';
         sendWishBtn.disabled = true;
         sendWishBtn.classList.add('btn-locked');
         sendWishBtn.innerText = 'Kirim Harapan ✨';
         
-        // Reset status
+
         sectionStatus[2] = { completed: false, wishSent: false, candlesLit: false };
         
-        // Pastikan tombol menu tidak terkunci (karena reset)
+
         document.getElementById("backToMenuBtn").classList.remove('nav-blocked');
     }
     
     function resetSection3() {
-        // Reset letter
+
         const letter = document.getElementById('loveLetter');
         if (letter) letter.classList.remove('open');
         document.getElementById('typewriter-text').innerHTML = '';
@@ -2005,25 +2292,25 @@
     }
     
     function resetSection4() {
-        // Reset film (no state needed)
+
         sectionStatus[4].completed = false;
     }
     
     function resetSection5() {
-        // Reset music player (pause video)
+
         const video = document.querySelector('#section-5 video');
         if (video) video.pause();
         sectionStatus[5].completed = false;
     }
     
     function resetSection6() {
-        // Reset tickets
+
         document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
         sectionStatus[6].completed = false;
     }
     
     function resetSection7() {
-        // Reset photobooth
+
         stopCamera();
         document.getElementById('result-ui')?.classList.add('hidden');
         document.getElementById('snap-btn')?.classList.add('hidden');
@@ -2035,9 +2322,9 @@
         sectionStatus[7].completed = false;
     }
     
-    // ==================== FUNGSI FULL RESET (PLAY AGAIN) ====================
+
     function fullResetApp() {
-        // Reset semua section
+
         resetSection0();
         resetSection1();
         resetSection2();
@@ -2047,17 +2334,17 @@
         resetSection6();
         resetSection7();
         
-        // Reset status global
+
         for (let i = 0; i <= 7; i++) {
             sectionStatus[i] = { completed: false };
         }
         sectionStatus[2] = { completed: false, wishSent: false, candlesLit: false };
         
-        // Kembali ke section 0
+
         goToSection(0);
     }
     
-    // ==================== FUNGSI TAMBAHAN ====================
+
     function showTemporaryMessage(msg) {
         const oldMsg = document.getElementById('tempMessage');
         if (oldMsg) oldMsg.remove();
@@ -2085,12 +2372,12 @@
         }, 2000);
     }
     
-    // Override fungsi goToSection yang lama
+
     window.goToSection = goToSection;
     window.tryGoToMenu = tryGoToMenu;
     window.fullResetApp = fullResetApp;
     
-    // Tambahkan style untuk animasi
+
     const style = document.createElement('style');
     style.innerHTML = `
         @keyframes fadeInOut {
@@ -2101,7 +2388,7 @@
         }
     `;
     document.head.appendChild(style);
-        // --- Calendar ---
+
         function checkDate(element, date) {
             document.querySelectorAll('.day-cell').forEach(cell => {
                 cell.classList.remove('correct', 'wrong');
@@ -2119,7 +2406,7 @@
             }
         }
 
-        // --- Gift ---
+
         function openGift() {
             const gift = document.querySelector('.gift-container');
             const startBtn = document.getElementById('start-btn');
@@ -2132,7 +2419,7 @@
         }
 
     
-        // --- Typewriter letter ---
+
         function startTyping() {
             const el = document.getElementById('typewriter-text');
             el.innerHTML = "";
@@ -2153,163 +2440,316 @@
             type();
         }
 
-        // --- Photobooth ---
-        function startPhotoboothSession() {
-            const video = document.getElementById('camera-stream');
-            const startBtn = document.getElementById('start-camera-btn');
-            const snapBtn = document.getElementById('snap-btn');
-            const gridPreview = document.getElementById('grid-preview-container');
-            const instruction = document.getElementById('photo-instruction');
 
-            photoCount = 0; photosTaken = [];
-            for(let i=1; i<=6; i++) {
-                const box = document.getElementById(`preview-${i}`);
-                if (box) { box.innerHTML = i; box.classList.remove('filled'); }
-            }
+let selectedMode = null;
 
-            video.classList.remove('hidden');
-            gridPreview.classList.remove('hidden');
-            startBtn.classList.add('hidden');
+
+function selectMode(mode) {
+    selectedMode = mode;
+    
+
+    document.getElementById('mode-selection').style.display = 'none';
+    
+
+    const cameraUI = document.getElementById('camera-ui');
+    cameraUI.classList.remove('hidden');
+    
+
+    cameraUI.classList.remove('portrait-mode', 'landscape-mode');
+    cameraUI.classList.add(mode + '-mode');
+    
+
+    photoCount = 0;
+    photosTaken = [];
+    
+
+    for(let i = 1; i <= 6; i++) {
+        const box = document.getElementById(`preview-${i}`);
+        if (box) {
+            box.innerHTML = i;
+            box.classList.remove('filled');
+        }
+    }
+    
+
+    document.getElementById('start-camera-btn').classList.remove('hidden');
+    document.getElementById('snap-btn').classList.add('hidden');
+    document.getElementById('photo-instruction').classList.add('hidden');
+    document.getElementById('grid-preview-container').classList.add('hidden');
+    document.getElementById('camera-stream').classList.add('hidden');
+}
+
+
+function startPhotoboothSession() {
+    const video = document.getElementById('camera-stream');
+    const startBtn = document.getElementById('start-camera-btn');
+    const snapBtn = document.getElementById('snap-btn');
+    const gridPreview = document.getElementById('grid-preview-container');
+    const instruction = document.getElementById('photo-instruction');
+
+    photoCount = 0;
+    photosTaken = [];
+    
+    for(let i = 1; i <= 6; i++) {
+        const box = document.getElementById(`preview-${i}`);
+        if (box) {
+            box.innerHTML = i;
+            box.classList.remove('filled');
+        }
+    }
+
+    video.classList.remove('hidden');
+    gridPreview.classList.remove('hidden');
+    if (startBtn) startBtn.classList.add('hidden');
+    
+    const constraints = {
+        video: { facingMode: "user" }
+    };
+    
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then(stream => {
+            videoStream = stream;
+            video.srcObject = stream;
             
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(stream => {
-                    videoStream = stream;
-                    video.srcObject = stream;
-                    video.play();
-                    snapBtn.classList.remove('hidden');
-                    instruction.classList.remove('hidden');
-                    instruction.innerText = "0/6 photos";
-                })
-                .catch(err => {
-                    alert("Camera error: " + err);
-                    stopCameraAndBack();
-                });
-        }
 
-        function takePhoto() {
-            if (photoCount >= 6) return;
-            const video = document.getElementById('camera-stream');
+            video.onloadedmetadata = () => {
+                video.play().catch(e => console.error("Video play error:", e));
+            };
             
-            // Flash
-            const flash = document.getElementById('flash-effect');
-            flash.classList.add('flash-animation');
-            setTimeout(() => flash.classList.remove('flash-animation'), 200);
+            snapBtn.classList.remove('hidden');
+            instruction.classList.remove('hidden');
+            instruction.innerText = `0/6 photos`;
+        })
+        .catch(err => {
+            alert("Kamera tidak dapat diakses. Pastikan kamu memberi izin kamera pada browser.");
+            stopCameraAndBack();
+        });
+}
 
-            const canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.translate(canvas.width, 0);
-            ctx.scale(-1, 1);
-            ctx.drawImage(video, 0, 0);
-            
-            const imgData = canvas.toDataURL('image/png');
-            photosTaken.push(imgData);
-            photoCount++;
 
-            const previewBox = document.getElementById(`preview-${photoCount}`);
-            previewBox.innerHTML = `<img src="${imgData}">`;
-            previewBox.classList.add('filled');
-            
-            document.getElementById('photo-instruction').innerText = `${photoCount}/6 photos`;
+function takePhoto() {
+    if (photoCount >= 6) return;
+    
+    const video = document.getElementById('camera-stream');
+    
 
-            if (photoCount === 6) {
-                document.getElementById('photo-instruction').innerText = "Creating... ✨";
-                setTimeout(processFinalGrid, 800);
-            }
+    const flash = document.getElementById('flash-effect');
+    flash.classList.add('flash-animation');
+    setTimeout(() => flash.classList.remove('flash-animation'), 200);
+
+
+    const vw = video.videoWidth;
+    const vh = video.videoHeight;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = vw;
+    canvas.height = vh;
+    const ctx = canvas.getContext('2d');
+    
+
+    ctx.translate(canvas.width, 0);
+    ctx.scale(-1, 1);
+    
+
+    ctx.drawImage(video, 0, 0, vw, vh);
+    
+    const imgData = canvas.toDataURL('image/png');
+    photosTaken.push(imgData);
+    photoCount++;
+
+
+    const previewBox = document.getElementById(`preview-${photoCount}`);
+    if(previewBox) {
+        previewBox.innerHTML = `<img src="${imgData}" style="width:100%; height:100%; object-fit:cover;">`;
+        previewBox.classList.add('filled');
+    }
+    
+    document.getElementById('photo-instruction').innerText = `${photoCount}/6 photos`;
+
+    if (photoCount === 6) {
+        document.getElementById('photo-instruction').innerText = "Menyusun foto... ✨";
+        setTimeout(processFinalGrid, 800);
+    }
+}
+
+
+function processFinalGrid() {
+    const canvas = document.getElementById('photo-canvas');
+    const resultImg = document.getElementById('photo-result');
+    const downloadLink = document.getElementById('download-link');
+    const cameraUI = document.getElementById('camera-ui');
+    const resultUI = document.getElementById('result-ui');
+
+
+    const sampleImg = new Image();
+    sampleImg.onload = () => {
+        const nativeRatio = sampleImg.height / sampleImg.width;
+
+
+        const w = 1200;
+        const cols = 2; 
+        const rows = 3;
+        const gap = 40; 
+        const padding = 60; 
+        const bottomSpace = 180;
+
+
+        const availableWidth = w - (padding * 2) - (gap * (cols - 1));
+        const photoWidth = availableWidth / cols;
+        
+
+        const photoHeight = photoWidth * nativeRatio;
+
+
+        const gridHeight = (rows * photoHeight) + ((rows - 1) * gap);
+        const h = padding + gridHeight + bottomSpace;
+        
+        canvas.width = w;
+        canvas.height = h;
+        
+        const ctx = canvas.getContext('2d');
+
+
+        ctx.fillStyle = "#fffcf7";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        let loaded = 0;
+        photosTaken.forEach((src, i) => {
+            const img = new Image();
+            img.onload = () => {
+                const col = i % cols;
+                const row = Math.floor(i / cols);
+                
+                const x = padding + col * (photoWidth + gap);
+                const y = padding + row * (photoHeight + gap);
+
+
+                ctx.drawImage(img, 0, 0, img.width, img.height, x, y, photoWidth, photoHeight);
+                
+
+                ctx.strokeStyle = "rgba(184, 128, 128, 0.5)"; 
+                ctx.lineWidth = 5;
+                ctx.strokeRect(x, y, photoWidth, photoHeight);
+
+                loaded++;
+                if (loaded === 6) {
+
+                    const textCenter = canvas.width / 2;
+                    const footerY = canvas.height - 100;
+
+                    ctx.font = "bold 52px 'Playfair Display'";
+                    ctx.fillStyle = "#b88080";
+                    ctx.textAlign = "center";
+                    ctx.fillText("Happy Birthday Nisrina!", textCenter, footerY);
+                    
+                    const date = new Date().toLocaleDateString('id-ID', { 
+                        day: 'numeric', month: 'long', year: 'numeric' 
+                    });
+                    
+                    ctx.font = "600 32px 'Quicksand'";
+                    ctx.fillStyle = "#a78686";
+                    ctx.fillText(date + " • with Love ❤️", textCenter, footerY + 50);
+
+
+                    resultImg.src = canvas.toDataURL('image/png');
+                    downloadLink.href = resultImg.src;
+                    downloadLink.download = `Photobooth_Nisrina_${Date.now()}.png`;
+
+                    cameraUI.classList.add('hidden');
+                    resultUI.classList.remove('hidden');
+                    stopCamera();
+                }
+            };
+            img.src = src;
+        });
+    };
+
+    sampleImg.src = photosTaken[0];
+}
+
+function resetCamera() {
+
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+        videoStream = null;
+    }
+    
+
+    document.getElementById('result-ui').classList.add('hidden');
+    
+
+    const cameraUI = document.getElementById('camera-ui');
+    cameraUI.classList.remove('hidden');
+    
+
+    document.getElementById('snap-btn').classList.add('hidden');
+    document.getElementById('photo-instruction').classList.add('hidden');
+    document.getElementById('start-camera-btn').classList.remove('hidden');
+    document.getElementById('grid-preview-container').classList.add('hidden');
+    document.getElementById('camera-stream').classList.add('hidden');
+    
+
+    photoCount = 0;
+    photosTaken = [];
+    
+
+    for(let i = 1; i <= 6; i++) {
+        const box = document.getElementById(`preview-${i}`);
+        if (box) {
+            box.innerHTML = i;
+            box.classList.remove('filled');
         }
+    }
+}
 
-        function processFinalGrid() {
-            const canvas = document.getElementById('photo-canvas');
-            const resultImg = document.getElementById('photo-result');
-            const downloadLink = document.getElementById('download-link');
-            const cameraUI = document.getElementById('camera-ui');
-            const resultUI = document.getElementById('result-ui');
 
-            const w = 800, h = 1100;
-            canvas.width = w; canvas.height = h;
-            const ctx = canvas.getContext('2d');
+function stopCameraAndBack() {
 
-            ctx.fillStyle = "#fffaf0";
-            ctx.fillRect(0, 0, w, h);
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+        videoStream = null;
+    }
+    
 
-            const photoWidth = (w - 120) / 2;
-            const photoHeight = photoWidth * 0.75;
-            let loaded = 0;
+    document.getElementById('camera-ui').classList.add('hidden');
+    document.getElementById('result-ui').classList.add('hidden');
+    
 
-            photosTaken.forEach((src, i) => {
-                const img = new Image();
-                img.onload = () => {
-                    const col = i % 2;
-                    const row = Math.floor(i / 2);
-                    const x = 40 + col * (photoWidth + 40);
-                    const y = 60 + row * (photoHeight + 20);
+    photoCount = 0;
+    photosTaken = [];
+    
 
-                    ctx.drawImage(img, 0, 0, img.width, img.height, x, y, photoWidth, photoHeight);
-                    ctx.strokeStyle = "#ebcbcb";
-                    ctx.lineWidth = 4;
-                    ctx.strokeRect(x, y, photoWidth, photoHeight);
-
-                    loaded++;
-                    if (loaded === 6) {
-                        ctx.font = "bold 40px 'Playfair Display'";
-                        ctx.fillStyle = "#b88080";
-                        ctx.textAlign = "center";
-                        ctx.fillText("Happy Birthday Nisrina!", w/2, h - 120);
-                        
-                        const date = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-                        ctx.font = "20px 'Quicksand'";
-                        ctx.fillStyle = "#a78686";
-                        ctx.fillText(date, w/2, h - 70);
-
-                        resultImg.src = canvas.toDataURL('image/png');
-                        downloadLink.href = resultImg.src;
-                        downloadLink.download = `photobooth_nisrina_${Date.now()}.png`;
-
-                        cameraUI.classList.add('hidden');
-                        resultUI.classList.remove('hidden');
-                        stopCamera();
-                    }
-                };
-                img.src = src;
-            });
+    for(let i = 1; i <= 6; i++) {
+        const box = document.getElementById(`preview-${i}`);
+        if (box) {
+            box.innerHTML = i;
+            box.classList.remove('filled');
         }
+    }
+    
 
-        function resetCamera() {
-            stopCamera();
-            document.getElementById('result-ui').classList.add('hidden');
-            document.getElementById('snap-btn').classList.add('hidden');
-            document.getElementById('photo-instruction').classList.add('hidden');
-            document.getElementById('start-camera-btn').classList.remove('hidden');
-            document.getElementById('camera-ui').classList.remove('hidden');
-            document.getElementById('grid-preview-container').classList.add('hidden');
-            document.getElementById('camera-stream').classList.add('hidden');
-        }
+    goToSection('menu');
+}
 
-        function stopCamera() {
-            if (videoStream) {
-                videoStream.getTracks().forEach(track => track.stop());
-                videoStream = null;
-            }
-        }
 
-        function stopCameraAndBack() {
-            stopCamera();
-            goToSection('menu');
-        }
+function stopCamera() {
+    if (videoStream) {
+        videoStream.getTracks().forEach(track => track.stop());
+        videoStream = null;
+    }
+}
 
-        // --- Tickets ---
         function toggleTicket(el) {
             document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
             el.classList.add('revealed');
         }
 
-        // --- Reset coupons (close all tickets) ---
+
         function resetCoupons() {
             document.querySelectorAll('.ticket').forEach(t => t.classList.remove('revealed'));
         }
 
-        // --- Mascot ---
+
         function mascotTalk() {
             const mascot = document.querySelector('.mascot-container');
             const bubble = document.getElementById('mascot-text');
@@ -2319,7 +2759,7 @@
             setTimeout(() => mascot.classList.remove('talking'), 3000);
         }
 
-        // --- Sparkles / effects ---
+
         function createSparkles() {
             for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
@@ -2335,36 +2775,36 @@
             }
         }
 
-        // --- Full Reset (Play Again) ---
+
         function fullResetApp() {
             stopCamera();
             resetCoupons();
             
-            // Reset calendar visuals
+
             document.querySelectorAll('.day-cell').forEach(cell => {
                 cell.classList.remove('correct', 'wrong');
             });
             document.getElementById('calendar-feedback').innerText = '';
 
-            // Reset gift box
+
             const gift = document.querySelector('.gift-container');
             if (gift) gift.classList.remove('open');
             document.getElementById('start-btn').classList.add('hidden');
 
-            // Reset cake
+
             document.querySelectorAll('.flame').forEach(f => f.classList.remove('lit'));
             document.getElementById('cake-text').innerText = "The candles are waiting...";
             document.getElementById('lightBtn').style.display = 'block';
             document.getElementById('wish-section').style.display = 'none';
             document.getElementById('blowBtn').style.display = 'none';
             
-            // Reset typewriter
+
             document.getElementById('typewriter-text').innerHTML = "";
 
             goToSection(0);
         }
 
-        // Cursor sparkles
+
         document.addEventListener('mousemove', (e) => {
             if (Math.random() < 0.15) {
                 const spark = document.createElement('div');
